@@ -10,7 +10,7 @@ export function Review() {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/.netlify/functions/getReviews/").catch(
+      const response = await fetch("./netlify/functions/getReviews").catch(
         function (err) {
           console.log("error in retrieving the API response", err);
         }
