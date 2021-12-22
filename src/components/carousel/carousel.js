@@ -4,46 +4,28 @@ import SlideMount from "components/slideMount/slideMount";
 import styled from "styled-components";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+const Section = styled.section`
+  display: flex;
+`;
+
 const SlideWrapper = styled.div`
+  display: flex;
   position: relative;
   margin-top: 59px;
   transform: translateX(${(props) => props.currentSlide * -200}px);
   transition: all 300ms ease-out;
 `;
 
+const Navigation = styled.div`
+  margin: 275px;
+  inline: block;
+`;
+
 export function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <section>
-      {currentSlide}
-
-      <FaChevronLeft
-        onClick={() =>
-          setCurrentSlide((prevCurrentSlide) =>
-            prevCurrentSlide > 0
-              ? prevCurrentSlide - 1
-              : DiaporamaData.length - 1
-          )
-        }
-      />
-
-      {/* {DiaporamaData.map((diaporama, index) => (
-          <h1 currentSlide={currentSlide} key={index}>
-            {diaporama.title}
-          </h1>
-        ))} */}
-
-      <FaChevronRight
-        onClick={() =>
-          setCurrentSlide((prevCurrentSlide) =>
-            prevCurrentSlide < DiaporamaData.length - 1
-              ? prevCurrentSlide + 1
-              : 0
-          )
-        }
-      />
-
+    <Section>
       <SlideWrapper currentSlide={currentSlide}>
         {DiaporamaData.map((diaporama, index) => (
           <SlideMount
@@ -54,6 +36,26 @@ export function Carousel() {
           />
         ))}
       </SlideWrapper>
-    </section>
+      <Navigation>
+        <FaChevronLeft
+          onClick={() =>
+            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide + 1)
+          }
+        />
+
+        {/* {DiaporamaData.map((diaporama, index) => (
+          <h1 currentSlide={currentSlide} key={index} >
+            {diaporama.title}
+          </h1>
+        ))} */}
+        {currentSlide}
+
+        <FaChevronRight
+          onClick={() =>
+            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide - 1)
+          }
+        />
+      </Navigation>
+    </Section>
   );
 }
