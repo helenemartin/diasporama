@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import DiaporamaData from "../../fixtures/diaporama.json";
 import SlideMount from "components/slideMount/slideMount";
 import styled from "styled-components";
-import "./carousel.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const SlideWrapper = styled.div`
   position: relative;
@@ -17,7 +17,8 @@ export function Carousel() {
   return (
     <section>
       {currentSlide}
-      <button
+
+      <FaChevronLeft
         onClick={() =>
           setCurrentSlide((prevCurrentSlide) =>
             prevCurrentSlide > 0
@@ -25,11 +26,15 @@ export function Carousel() {
               : DiaporamaData.length - 1
           )
         }
-      >
-        {" "}
-        avant{" "}
-      </button>
-      <button
+      />
+
+      {/* {DiaporamaData.map((diaporama, index) => (
+          <h1 currentSlide={currentSlide} key={index}>
+            {diaporama.title}
+          </h1>
+        ))} */}
+
+      <FaChevronRight
         onClick={() =>
           setCurrentSlide((prevCurrentSlide) =>
             prevCurrentSlide < DiaporamaData.length - 1
@@ -37,10 +42,8 @@ export function Carousel() {
               : 0
           )
         }
-      >
-        {" "}
-        après{" "}
-      </button>
+      />
+
       <SlideWrapper currentSlide={currentSlide}>
         {DiaporamaData.map((diaporama, index) => (
           <SlideMount

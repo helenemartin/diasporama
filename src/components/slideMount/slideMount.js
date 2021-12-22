@@ -13,22 +13,39 @@ const Wrapper = styled.div`
 
   img {
     width: 100%;
+    position: absolute;
+    object-fit: contain;
+    z-index: 1;
   }
 `;
 
+// const Image1 = styled.img`
+//   position: relative;
+//   width: 100%;
+// `;
+
+// const Image2 = styled.img`
+//   position: absolute;
+//   object-fit: cover;
+//   width: 100%;
+//   z-index: 1;
+// `;
+
 export default function SlideMount(props) {
   return (
-    <Wrapper current={props.currentSlide === props.index} index={props.index}>
-      <Link to={`Projects/${props.diaporama.slug}`} key={props.diaporama.id}>
-        <img
-          src={process.env.PUBLIC_URL + props.diaporama.slugImage}
-          alt={props.diaporama.diapo.alt}
-        />
-        <img
-          src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
-          alt={props.diaporama.slideAlt}
-        />
-      </Link>
-    </Wrapper>
+    <>
+      <Wrapper current={props.currentSlide === props.index} index={props.index}>
+        <Link to={`Projects/${props.diaporama.slug}`} key={props.diaporama.id}>
+          <img
+            src={process.env.PUBLIC_URL + props.diaporama.slugImage}
+            alt={props.diaporama.diapo.alt}
+          />
+          <img
+            src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
+            alt={props.diaporama.slideAlt}
+          />
+        </Link>
+      </Wrapper>
+    </>
   );
 }
