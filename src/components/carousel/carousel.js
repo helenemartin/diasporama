@@ -33,14 +33,25 @@ export function Carousel() {
             key={diaporama.id}
             index={index}
             currentSlide={currentSlide}
+            title={diaporama.title}
           />
         ))}
       </SlideWrapper>
       <Navigation>
         <FaChevronLeft
           onClick={() =>
-            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide + 1)
+            setCurrentSlide(
+              (prevCurrentSlide) =>
+                (prevCurrentSlide - 1) % DiaporamaData.length
+            )
           }
+          // onClick={() =>
+          //   setCurrentSlide((prevCurrentSlide) =>
+          //     prevCurrentSlide > 0
+          //       ? prevCurrentSlide + 1
+          //       : DiaporamaData.length - 1
+          //   )
+          // }
         />
 
         {/* {DiaporamaData.map((diaporama, index) => (
@@ -52,8 +63,18 @@ export function Carousel() {
 
         <FaChevronRight
           onClick={() =>
-            setCurrentSlide((prevCurrentSlide) => prevCurrentSlide - 1)
+            setCurrentSlide(
+              (prevCurrentSlide) =>
+                (prevCurrentSlide + 1) % DiaporamaData.length
+            )
           }
+          // onClick={() =>
+          //   setCurrentSlide((prevCurrentSlide) =>
+          //     prevCurrentSlide < DiaporamaData.length + 1
+          //       ? prevCurrentSlide + 1
+          //       : 0
+          //   )
+          // }
         />
       </Navigation>
     </Section>

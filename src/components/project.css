@@ -1,5 +1,6 @@
 
 .linkList {
+  
     list-style: none;
     letter-spacing: 0.08em;
     font-size: 60px;
@@ -55,7 +56,7 @@
 } */
 
 .project-list__item-link{
-
+ 
   position: relative;
   z-index: 2;
 
@@ -101,15 +102,19 @@
     margin-top: 27px;
   
   }
-
+  
 
   .project-list__item-link:hover + .project-list__item-image {
+    color: black;
+  
     visibility: visible;
     
   }
 
   .project-list__item-link{
+   
     color: #333;
+   
     font-size: 65px;
     text-decoration: none;
     letter-spacing:-6px;
@@ -120,6 +125,9 @@
 
  
   .project-list__item-link:hover{
+    /* color: black;
+    mix-blend-mode: color; */
+   
     font-size: 65px;
     letter-spacing:-1px;
     text-decoration: none;
@@ -127,7 +135,7 @@
     font:70px;  
   }
   .project-list__item-link:visited{
-
+   
     color:black;
   
   }

@@ -13,7 +13,7 @@ function Project() {
             <li className="project-list__item" key={diaporama.title}>
               <Link
                 className="project-list__item-link"
-                to={`Projects/${diaporama.slug}`}
+                to={`projects/${diaporama.slug}`}
               >
                 {diaporama.title}
               </Link>

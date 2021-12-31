@@ -70,9 +70,9 @@ const RightNav = ({ open }) => {
   return (
  
     <Ul open={open}>
-      <CustomLink><StyledLink to="/Projects">Projects</StyledLink></CustomLink>
-      <CustomLink><StyledLink to="/Reviews">Reviews</StyledLink>  </CustomLink>  
-      <CustomLink><StyledLink to="/Contact">Contact</StyledLink> </CustomLink> 
+      <CustomLink><StyledLink to="/projects">Projects</StyledLink></CustomLink>
+      <CustomLink><StyledLink to="/reviews">Reviews</StyledLink>  </CustomLink>  
+      <CustomLink><StyledLink to="/contact">Contact</StyledLink> </CustomLink> 
     </Ul>
 
     

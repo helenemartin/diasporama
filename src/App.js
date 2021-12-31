@@ -14,16 +14,16 @@ export function App() {
       <DotRing />
 
       <Switch>
-        <Route path="/Contact">
+        <Route path="/contact">
           <Contact />
         </Route>
-        <Route exact path="/Projects">
+        <Route exact path="/projects">
           <Projects />
         </Route>
-        <Route path="/Reviews">
+        <Route path="/reviews">
           <Review />
         </Route>
-        <Route path="/Projects/:slug">
+        <Route path="/projects/:slug">
           <Shuffle />
         </Route>
         <Route path="/">

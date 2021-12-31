@@ -35,7 +35,7 @@ export default function SlideMount(props) {
   return (
     <>
       <Wrapper current={props.currentSlide === props.index} index={props.index}>
-        <Link to={`Projects/${props.diaporama.slug}`} key={props.diaporama.id}>
+        <Link to={`projects/${props.diaporama.slug}`} key={props.diaporama.id}>
           <img
             src={process.env.PUBLIC_URL + props.diaporama.slugImage}
             alt={props.diaporama.diapo.alt}
