@@ -33,7 +33,6 @@ export function Carousel() {
             key={diaporama.id}
             index={index}
             currentSlide={currentSlide}
-            title={diaporama.title}
           />
         ))}
       </SlideWrapper>
