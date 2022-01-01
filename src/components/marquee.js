@@ -9,7 +9,7 @@ const marqueeVariants = {
       x: {
         repeat: Infinity,
         repeatType: "loop",
-        duration: 5,
+        duration: 10,
         ease: "linear",
       },
     },
@@ -26,9 +26,9 @@ const Marquee = () => {
           animate="animate"
         >
           <h1>
-            Let's Work Together. Let's Work Together. Let's Work Together. Let's
-            Work Together. Let's Work Together. Let's Work Together. Let's Work
-            Together
+            Think twice,cut once.Think twice, cut once. Think twice, cut once.
+            Think twice, cut once. Think twice, cut once. Think twice, cut once.
+            Think twice, cut once. Think twice, cut once.
           </h1>
         </motion.div>
       </div>

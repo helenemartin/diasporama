@@ -9,8 +9,9 @@ export function Home() {
   return (
     <>
       <Navbar />
-      <Marquee />
+
       <Carousel />
+      <Marquee />
       {/* <Project /> */}
       {/* <FeatureContainer />; */}
     </>
