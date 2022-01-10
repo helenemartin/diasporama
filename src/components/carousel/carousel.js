@@ -12,7 +12,7 @@ const SlideWrapper = styled.div`
   display: flex;
   position: relative;
   margin-top: 59px;
-  transform: translateX(${(props) => props.currentSlide * -200}px);
+  transform: translateX(-200px);
   transition: all 300ms ease-out;
 `;
 
@@ -38,42 +38,31 @@ export function Carousel() {
       </SlideWrapper>
       <Navigation>
         <FaChevronLeft
-          onClick={() =>
-            setCurrentSlide(
-              (prevCurrentSlide) =>
-                (prevCurrentSlide - 1) % DiaporamaData.length
-            )
-          }
-          // onClick={() =>
-          //   setCurrentSlide((prevCurrentSlide) =>
-          //     prevCurrentSlide > 0
-          //       ? prevCurrentSlide + 1
-          //       : DiaporamaData.length - 1
-          //   )
-          // }
+          onClick={() => {
+            setCurrentSlide((prevCurrentSlide) =>
+              prevCurrentSlide > 0
+                ? prevCurrentSlide - 1
+                : DiaporamaData.length - 1
+            );
+
+            DiaporamaData.push(DiaporamaData.shift());
+            // setCurrentSlide(0);
+          }}
         />
 
-        {/* {DiaporamaData.map((diaporama, index) => (
-          <h1 currentSlide={currentSlide} key={index} >
-            {diaporama.title}
-          </h1>
-        ))} */}
-        {currentSlide}
+        {DiaporamaData[0].title}
 
         <FaChevronRight
-          onClick={() =>
-            setCurrentSlide(
-              (prevCurrentSlide) =>
-                (prevCurrentSlide + 1) % DiaporamaData.length
-            )
-          }
-          // onClick={() =>
-          //   setCurrentSlide((prevCurrentSlide) =>
-          //     prevCurrentSlide < DiaporamaData.length + 1
-          //       ? prevCurrentSlide + 1
-          //       : 0
-          //   )
-          // }
+          onClick={() => {
+            setCurrentSlide((prevCurrentSlide) =>
+              // (prevCurrentSlide + 1) % DiaporamaData.length
+              prevCurrentSlide == DiaporamaData.length - 1
+                ? 0
+                : prevCurrentSlide + 1
+            );
+            DiaporamaData.unshift(DiaporamaData.pop());
+            // setCurrentSlide(0);
+          }}
         />
       </Navigation>
     </Section>

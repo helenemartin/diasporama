@@ -11,7 +11,7 @@ export function Home() {
       <Navbar />
 
       <Carousel />
-      <Marquee />
+      {/* <Marquee /> */}
       {/* <Project /> */}
       {/* <FeatureContainer />; */}
     </>
