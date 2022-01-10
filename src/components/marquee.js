@@ -18,20 +18,26 @@ const marqueeVariants = {
 
 const Marquee = () => {
   return (
-    <div>
-      <div className="marquee">
-        <motion.div
-          className="track"
-          variants={marqueeVariants}
-          animate="animate"
-        >
-          <h1>
-            Think twice,cut once.Think twice, cut once. Think twice, cut once.
-            Think twice, cut once. Think twice, cut once. Think twice, cut once.
-            Think twice, cut once. Think twice, cut once.
-          </h1>
-        </motion.div>
-      </div>
+    <div className="marquee">
+      <motion.div
+        className="track"
+        variants={marqueeVariants}
+        animate="animate"
+      >
+        <h1>
+          Think twice, cut once.Think twice, cut once. Think twice, cut once.
+          Think twice, cut once. Think twice, cut once. Think twice, cut once.
+          Think twice, cut once. Think twice, cut once. Think twice, cut
+          once.Think twice, cut once. Think twice, cut once. Think twice, cut
+          once. Think twice, cut once. Think twice, cut once. Think twice, cut
+          once. Think twice, cut once. Think twice, cut once.Think twice, cut
+          once. Think twice, cut once. Think twice, cut once. Think twice, cut
+          once. Think twice, cut once. Think twice, cut once. Think twice, cut
+          once. Think twice, cut once.Think twice, cut once. Think twice, cut
+          once. Think twice, cut once. Think twice, cut once. Think twice, cut
+          once. Think twice, cut once. Think twice, cut once.
+        </h1>
+      </motion.div>
     </div>
   );
 };

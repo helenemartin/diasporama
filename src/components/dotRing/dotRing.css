@@ -32,7 +32,10 @@
 .ring.hovered {
   width: 50px;
   height: 50px;
+  filter: blur;
   border-color: crimson;
+  
+
 }
 
 /* .dot.hovered {
