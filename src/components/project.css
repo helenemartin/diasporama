@@ -40,7 +40,7 @@
 
 .project-list__item{
   font-size: 23px;
-  margin-top: 100px;
+  margin-top: 5px;
   z-index: -3;
 
 }
@@ -83,6 +83,13 @@
 
 @media (min-width: 900px) {
 
+  .project-list__item{
+    
+    margin-top: 100px;
+  
+  
+  }
+
   .project-list__item-image {
    
     visibility: hidden;
@@ -105,7 +112,9 @@
   
 
   .project-list__item-link:hover + .project-list__item-image {
-    color: black;
+   
+    color:blue;
+    mix-blend-mode: color-burn;
   
     visibility: visible;
     
@@ -127,7 +136,7 @@
   .project-list__item-link:hover{
     /* color: black;
     mix-blend-mode: color; */
-   
+    
     font-size: 65px;
     letter-spacing:-1px;
     text-decoration: none;
@@ -137,6 +146,7 @@
   .project-list__item-link:visited{
    
     color:black;
+    
   
   }
 

@@ -23,6 +23,7 @@ const Navigation = styled.div`
 
 export function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [index, setIndex] = useState(0);
 
   return (
     <Section>
@@ -50,7 +51,7 @@ export function Carousel() {
           }}
         />
 
-        {DiaporamaData[0].title}
+        {DiaporamaData[index].title}
 
         <FaChevronRight
           onClick={() => {
