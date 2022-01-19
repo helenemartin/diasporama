@@ -3,7 +3,7 @@ import React from "react";
 // import Project from "../components/project";
 import Navbar from "../components/nav/Navbar";
 import { Carousel } from "../components/carousel/carousel";
-import Marquee from "../components/marquee";
+// import Marquee from "../components/marquee";
 
 export function Home() {
   return (

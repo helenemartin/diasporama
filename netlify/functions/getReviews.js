@@ -2,7 +2,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 const API_ENDPOINT =
-  "https://www.trustedhousesitters.com/houcse-and-pet-sitters/united-kingdom/england/london/l/1687461/";
+  "https://www.trustedhousesitters.com/house-and-pet-sitters/united-kingdom/england/london/l/1687461/";
 async function fetchPage(url) {
   const response = await axios(url, { responseType: "document" });
   console.log(response);

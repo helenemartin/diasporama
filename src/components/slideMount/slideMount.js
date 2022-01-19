@@ -8,8 +8,9 @@ const Wrapper = styled.div`
   height: 100px;
   position: absolute;
   opacity: 1;
-  transform: translateX();
-  left: ${(props) => props.index * 200}px;
+
+  transform: translateX(0);
+  left: ${(props) => props.index * -200}px;
 
   img {
     width: 100%;
@@ -32,6 +33,9 @@ const Wrapper = styled.div`
 // `;
 
 export default function SlideMount(props) {
+  // console.log(props.diaporama);
+  // console.log(props.currentSlide);
+  // console.log(props.index);
   return (
     <>
       <Wrapper current={props.currentSlide === props.index} index={props.index}>
