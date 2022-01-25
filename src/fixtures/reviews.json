@@ -7,7 +7,11 @@
       "tidy": 5,
       "selfSufficient": 5,
       "petCare": 5,
-      "sentAt": "2021-09-14T07:51:33"
+      "location": "Greenwhich",
+      "country": "UK",
+      "sentAt": "2021-09-14T07:51:33",
+      "startDate": "2021-09-14T07:51:33",
+      "endDate": "2021-09-14T07:51:33"
     },
     "alexandra",
 
