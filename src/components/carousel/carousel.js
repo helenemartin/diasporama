@@ -81,6 +81,11 @@ const SlideWrapper = styled.div`
   transition: all 300ms ease-out;
 `;
 
+const SliderNav = styled.div`
+  margin-top: 272px;
+  margin-left: 25px;
+`;
+
 export function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slidingArray = [...DiaporamaData, ...DiaporamaData];
@@ -106,7 +111,7 @@ export function Carousel() {
           ))}
         </SlideWrapper>
       </section>
-      <div>
+      <SliderNav>
         <FaChevronLeft
           onClick={() => {
             setCurrentSlide((prevCurrentSlide) =>
@@ -134,7 +139,7 @@ export function Carousel() {
             // setCurrentSlide(0);
           }}
         />
-      </div>
+      </SliderNav>
     </>
   );
 }
