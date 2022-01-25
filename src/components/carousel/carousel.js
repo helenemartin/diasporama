@@ -93,7 +93,19 @@ export function Carousel() {
   }, [currentSlide]);
 
   return (
-    <section>
+    <>
+      <section>
+        <SlideWrapper currentSlide={currentSlide}>
+          {slidingArray.map((diaporama, index) => (
+            <SlideMount
+              diaporama={diaporama}
+              key={diaporama.id}
+              index={index}
+              currentSlide={currentSlide}
+            />
+          ))}
+        </SlideWrapper>
+      </section>
       <div>
         <FaChevronLeft
           onClick={() => {
@@ -123,16 +135,6 @@ export function Carousel() {
           }}
         />
       </div>
-      <SlideWrapper currentSlide={currentSlide}>
-        {slidingArray.map((diaporama, index) => (
-          <SlideMount
-            diaporama={diaporama}
-            key={diaporama.id}
-            index={index}
-            currentSlide={currentSlide}
-          />
-        ))}
-      </SlideWrapper>
-    </section>
+    </>
   );
 }

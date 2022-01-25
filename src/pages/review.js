@@ -9,6 +9,7 @@ import "./review.css";
 export function Review() {
   const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
+  const [minTimePassed, setMinTimePassed] = useState(false);
   useEffect(() => {
     const fetchData = () => {
       // const reviews = Revues;
@@ -18,6 +19,13 @@ export function Review() {
 
     fetchData();
   }, [setReviews]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMinTimePassed(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [setMinTimePassed]);
 
   function onFetchCompleted() {
     setLoading(false);
@@ -45,7 +53,7 @@ export function Review() {
 
   return (
     <>
-      {!loading && (
+      {!(loading || !minTimePassed) && (
         <>
           <Navbar />
           <div className="review-header">
@@ -67,7 +75,7 @@ export function Review() {
           </div>
         </>
       )}
-      {loading && <Loader />}
+      {(loading || !minTimePassed) && <Loader />}
     </>
   );
 }

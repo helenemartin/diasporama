@@ -31,7 +31,7 @@ exports.handler = async (event, context) => {
       scriptText,
       "window.__INITIAL_I18N_STORE__"
     );
-
+    console.log(statement, "hello");
     const scriptTextTrimmed = statement
       // .replace("window.__INITIAL_STATE__ =", "")
       // .trim()
