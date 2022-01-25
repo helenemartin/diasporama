@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import ReviewList from "../components/reviewList/reviewList.js";
+import Revues from "../fixtures/reviews.json";
 import Loader from "../components/loader";
 import ReviewCard from "../components/reviewCard/ReviewCard";
 import Navbar from "../components/nav/Navbar";
@@ -9,15 +10,10 @@ export function Review() {
   const [loading, setLoading] = useState(true);
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("./netlify/functions/getReviews").catch(
-        function (err) {
-          console.log("error in retrieving the API response", err);
-        }
-      );
-      const reviews = await response.json();
+    const fetchData = () => {
+      // const reviews = Revues;
       onFetchCompleted();
-      setReviews(reviews);
+      setReviews(Revues);
     };
 
     fetchData();
@@ -26,11 +22,20 @@ export function Review() {
   function onFetchCompleted() {
     setLoading(false);
   }
-
+  const cleanedReviews = reviews.map((review) => {
+    const photo = review[2];
+    const ownerName = review[1];
+    const object = review[0];
+    object.photo = photo;
+    object.ownerName = ownerName;
+    return object;
+  });
+  // cleanedReviews.push({ id: "0000" });
+  console.log(cleanedReviews);
   const cardLeft = [];
 
   const cardRight = [];
-  reviews.forEach((review, index) => {
+  cleanedReviews.forEach((review, index) => {
     if (index % 2 === 0) {
       cardLeft.push(review);
     } else {

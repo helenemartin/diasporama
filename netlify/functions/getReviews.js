@@ -33,9 +33,9 @@ exports.handler = async (event, context) => {
     );
 
     const scriptTextTrimmed = statement
-      .replace("window.__INITIAL_STATE__ =", "")
-      .trim()
-      .replace(/undefined/g, "null")
+      // .replace("window.__INITIAL_STATE__ =", "")
+      // .trim()
+      // .replace(/undefined/g, "null")
       .replace(/(\b)cat(\b)/g, "raccoon")
       .replace(/(\b)Helene(\b)/g, "R.")
       .replace(/(\b)Hélène(\b)/g, "R.")

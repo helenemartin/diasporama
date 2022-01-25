@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import View from "./view";
+// import ColourLayout from "./colourLayout";
 
 export default function Flicker(props) {
   const [flip, setFlip] = useState(true);
@@ -46,48 +47,48 @@ export default function Flicker(props) {
   // console.log(columnRight);
 
   return (
-    <>
-      <View.Section>
-        <View.Header>
-          <View.Textwrapper>
-            <View.H1>{props.title}</View.H1>
-            <View.Columnwrapper>
-              <View.Columnlayout>
-                <View.Column>{text}</View.Column>
-              </View.Columnlayout>
-            </View.Columnwrapper>
-          </View.Textwrapper>
-          <View.Controlswrapper>
-            <View.ButtonWrapper
-              onClick={() => {
-                setIsPlaying(!isPlaying);
-              }}
-            >
-              {isPlaying ? <View.Pause /> : <View.Play />}
-            </View.ButtonWrapper>
+    // <ColourLayout isDarkTheme={false}>
+    <View.Section>
+      <View.Header>
+        <View.Textwrapper>
+          <View.H1>{props.title}</View.H1>
+          <View.Columnwrapper>
+            <View.Columnlayout>
+              <View.Column>{text}</View.Column>
+            </View.Columnlayout>
+          </View.Columnwrapper>
+        </View.Textwrapper>
+        <View.Controlswrapper>
+          <View.ButtonWrapper
+            onClick={() => {
+              setIsPlaying(!isPlaying);
+            }}
+          >
+            {isPlaying ? <View.Pause /> : <View.Play />}
+          </View.ButtonWrapper>
 
-            <View.CloseWrapper>
-              <Link to="/projects">
-                <View.Close />
-              </Link>
-            </View.CloseWrapper>
-          </View.Controlswrapper>
-        </View.Header>
-        <View.Wrapper>
-          <View.Image
-            alt={diaporama.alt}
-            src={process.env.PUBLIC_URL + `${diaporama.image}`}
-          />
+          <View.CloseWrapper>
+            <Link to="/projects">
+              <View.Close />
+            </Link>
+          </View.CloseWrapper>
+        </View.Controlswrapper>
+      </View.Header>
+      <View.Wrapper>
+        <View.Image
+          alt={diaporama.alt}
+          src={process.env.PUBLIC_URL + `${diaporama.image}`}
+        />
 
-          <View.Text flip={flip}>
-            <View.H2>{diaporama.text}</View.H2>
-            <View.Figcaption>
-              {imageNumber + 1} / {Images.length}
-            </View.Figcaption>
-          </View.Text>
-          {/* <p>{diaporama.paragraph}</p> */}
-        </View.Wrapper>
-      </View.Section>
-    </>
+        <View.Text flip={flip}>
+          <View.H2>{diaporama.text}</View.H2>
+          <View.Figcaption>
+            {imageNumber + 1} / {Images.length}
+          </View.Figcaption>
+        </View.Text>
+        {/* <p>{diaporama.paragraph}</p> */}
+      </View.Wrapper>
+    </View.Section>
+    // </ColourLayout>
   );
 }

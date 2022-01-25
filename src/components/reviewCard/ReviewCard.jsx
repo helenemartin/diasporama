@@ -14,7 +14,7 @@ return (
         <ReviewItem
           ownerName={review.ownerName}
           textDescription={review.description}
-          review={review.review}
+          review={review}
           location={review.location}
           country={review.country}
           fullString={fullString}

@@ -68,7 +68,7 @@
 //     </Section>
 //   );
 // }
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DiaporamaData from "../../fixtures/diaporama.json";
 import SlideMount from "components/slideMount/slideMount";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -83,38 +83,48 @@ const SlideWrapper = styled.div`
 
 export function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const slidingArray = [...DiaporamaData, ...DiaporamaData];
+
+  useEffect(() => {
+    if (currentSlide >= 2) {
+      console.log(currentSlide);
+    } else {
+    }
+  }, [currentSlide]);
 
   return (
     <section>
-      <FaChevronLeft
-        onClick={() => {
-          setCurrentSlide((prevCurrentSlide) =>
-            prevCurrentSlide > 0
-              ? prevCurrentSlide - 1
-              : DiaporamaData.length - 1
-          );
+      <div>
+        <FaChevronLeft
+          onClick={() => {
+            setCurrentSlide((prevCurrentSlide) =>
+              prevCurrentSlide > 0
+                ? prevCurrentSlide - 1
+                : slidingArray.length - 1
+            );
 
-          // DiaporamaData.push(DiaporamaData.shift());
-          // setCurrentSlide(0);
-        }}
-      />
+            // slidingArray.push(slidingArray.shift());
+            // setCurrentSlide(0);
+          }}
+        />
 
-      {DiaporamaData[currentSlide].title}
+        {slidingArray[currentSlide].title}
 
-      <FaChevronRight
-        onClick={() => {
-          setCurrentSlide((prevCurrentSlide) =>
-            // (prevCurrentSlide + 1) % DiaporamaData.length
-            prevCurrentSlide === DiaporamaData.length - 1
-              ? 0
-              : prevCurrentSlide + 1
-          );
-          // DiaporamaData.unshift(DiaporamaData.pop());
-          // setCurrentSlide(0);
-        }}
-      />
+        <FaChevronRight
+          onClick={() => {
+            setCurrentSlide((prevCurrentSlide) =>
+              // (prevCurrentSlide + 1) % DiaporamaData.length
+              prevCurrentSlide === slidingArray.length - 1
+                ? 0
+                : prevCurrentSlide + 1
+            );
+            // slidingArray.unshift(slidingArray.pop());
+            // setCurrentSlide(0);
+          }}
+        />
+      </div>
       <SlideWrapper currentSlide={currentSlide}>
-        {DiaporamaData.map((diaporama, index) => (
+        {slidingArray.map((diaporama, index) => (
           <SlideMount
             diaporama={diaporama}
             key={diaporama.id}
