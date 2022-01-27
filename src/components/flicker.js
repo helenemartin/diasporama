@@ -89,6 +89,7 @@ export default function Flicker(props) {
         {/* <p>{diaporama.paragraph}</p> */}
       </View.Wrapper>
     </View.Section>
+    //{" "}
     // </ColourLayout>
   );
 }

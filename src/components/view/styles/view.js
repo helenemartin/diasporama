@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
+  // background-color: black;
   display: flex;
   width: 50vw;
 
@@ -15,7 +16,6 @@ export const Section = styled.section`
 `;
 
 export const Wrapper = styled.section`
-  // background-color: black;
   // margin: 0;
   position: relative;
   width: 100%;

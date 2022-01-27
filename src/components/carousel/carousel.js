@@ -75,20 +75,23 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styled from "styled-components";
 
 const SlideWrapper = styled.div`
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
   position: relative;
   margin-top: 59px;
-  transform: translateX(${(props) => props.currentSlide * 200}px);
-  transition: all 300ms ease-out;
 `;
 
 const SliderNav = styled.div`
-  margin-top: 272px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
   margin-left: 25px;
 `;
 
 export function Carousel() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slidingArray = [...DiaporamaData, ...DiaporamaData];
+  const currentSlide = 2;
+  const [slidingArray, setSlidingArray] = useState([...DiaporamaData]);
 
   useEffect(() => {
     if (currentSlide >= 2) {
@@ -97,6 +100,7 @@ export function Carousel() {
     }
   }, [currentSlide]);
 
+  console.log(slidingArray);
   return (
     <>
       <section>
@@ -114,13 +118,17 @@ export function Carousel() {
       <SliderNav>
         <FaChevronLeft
           onClick={() => {
-            setCurrentSlide((prevCurrentSlide) =>
-              prevCurrentSlide > 0
-                ? prevCurrentSlide - 1
-                : slidingArray.length - 1
-            );
+            // setCurrentSlide((prevCurrentSlide) =>
+            //   prevCurrentSlide > 0
+            //     ? prevCurrentSlide - 1
+            //     : slidingArray.length - 1
+            // );
 
-            // slidingArray.push(slidingArray.shift());
+            setSlidingArray((prevSlidingArray) => {
+              prevSlidingArray.push(prevSlidingArray.shift());
+              console.log(prevSlidingArray);
+              return [...prevSlidingArray];
+            });
             // setCurrentSlide(0);
           }}
         />
@@ -129,13 +137,17 @@ export function Carousel() {
 
         <FaChevronRight
           onClick={() => {
-            setCurrentSlide((prevCurrentSlide) =>
-              // (prevCurrentSlide + 1) % DiaporamaData.length
-              prevCurrentSlide === slidingArray.length - 1
-                ? 0
-                : prevCurrentSlide + 1
-            );
-            // slidingArray.unshift(slidingArray.pop());
+            // setCurrentSlide((prevCurrentSlide) =>
+            //   // (prevCurrentSlide + 1) % DiaporamaData.length
+            //   prevCurrentSlide === slidingArray.length - 1
+            //     ? 0
+            //     : prevCurrentSlide + 1
+            // );
+            setSlidingArray((prevSlidingArray) => {
+              prevSlidingArray.unshift(prevSlidingArray.pop());
+              console.log(prevSlidingArray);
+              return [...prevSlidingArray];
+            });
             // setCurrentSlide(0);
           }}
         />

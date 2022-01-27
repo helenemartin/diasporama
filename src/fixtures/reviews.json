@@ -11,7 +11,8 @@
       "country": "UK",
       "sentAt": "2021-09-14T07:51:33",
       "startDate": "2021-09-14T07:51:33",
-      "endDate": "2021-09-27T08:52:33"
+      "endDate": "2021-09-27T08:52:33",
+      "border": "12px 12px 2px 1px rgba(0, 0, 255, .2)"
     },
     "alexandra",
 
@@ -29,7 +30,8 @@
       "tidy": 5,
       "selfSufficient": 5,
       "petCare": 5,
-      "sentAt": "2021-09-07T22:09:13"
+      "sentAt": "2021-09-07T22:09:13",
+      "border": "12px 12px 2px 1px rgba(0, 0, 255, .2)"
     },
     "Catherine",
 

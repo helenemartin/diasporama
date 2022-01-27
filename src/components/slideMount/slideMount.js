@@ -9,8 +9,9 @@ const Wrapper = styled.div`
   position: absolute;
   opacity: 1;
 
-  transform: translateX(0);
-  left: ${(props) => props.index * -200}px;
+  transform: translateX(${(props) => props.position * 200}px);
+
+  transition: all 300ms ease-out;
 
   img {
     width: 100%;
@@ -35,10 +36,10 @@ const Wrapper = styled.div`
 export default function SlideMount(props) {
   // console.log(props.diaporama);
   // console.log(props.currentSlide);
-  // console.log(props.index);
+  console.log(props.index, props.currentSlide - props.index);
   return (
     <>
-      <Wrapper current={props.currentSlide === props.index} index={props.index}>
+      <Wrapper position={props.currentSlide - props.index} index={props.index}>
         <Link to={`projects/${props.diaporama.slug}`} key={props.diaporama.id}>
           <img
             src={process.env.PUBLIC_URL + props.diaporama.slugImage}

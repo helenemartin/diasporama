@@ -1,6 +1,14 @@
 import React from "react";
 import ReviewItem from "../reviewItem/reviewItem.js";
-import "./reviewList.css";
+// import "./reviewList.css";
+import styled from "styled-components";
+
+const ReviewWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function ReviewList({ reviews }) {
   // const [reviews, setReviews] = useState([]);
@@ -10,7 +18,7 @@ export default function ReviewList({ reviews }) {
     const fullString = stringId.concat(review.photo.publicId.slice(24));
 
     return (
-      <div className="reviews-wrapper" key={index}>
+      <ReviewWrapper key={index}>
         <ReviewItem
           ownerName={review.ownerName}
           textDescription={review.description}
@@ -20,8 +28,9 @@ export default function ReviewList({ reviews }) {
           fullString={fullString}
           startDate={review.startDate}
           endDate={review.endDate}
+          border={review.border}
         />
-      </div>
+      </ReviewWrapper>
     );
   });
 
