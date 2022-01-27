@@ -1,13 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 //rfc
 const Wrapper = styled.div`
   width: 200px;
   height: 100px;
   position: absolute;
-  opacity: 1;
+  opacity: ${(props) =>
+    props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
+
+  //opacity: 1;
 
   transform: translateX(${(props) => props.position * 200}px);
 
@@ -19,7 +22,7 @@ const Wrapper = styled.div`
     object-fit: contain;
     z-index: 1;
   }
-`
+`;
 
 // const Image1 = styled.img`
 //   position: relative;
@@ -36,7 +39,7 @@ const Wrapper = styled.div`
 export default function SlideMount(props) {
   // console.log(props.diaporama);
   // console.log(props.currentSlide);
-  console.log(props.diaporama.title, props.index)
+  console.log(props.diaporama.title, props.index);
   return (
     <>
       <Wrapper position={props.currentSlide - props.index} index={props.index}>
@@ -52,5 +55,5 @@ export default function SlideMount(props) {
         </Link>
       </Wrapper>
     </>
-  )
+  );
 }

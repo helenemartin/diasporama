@@ -1,31 +1,37 @@
-import React, { useState } from 'react'
-import DiaporamaData from '../../fixtures/diaporama.json'
-import SlideMount from 'components/slideMount/slideMount'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import styled from 'styled-components'
+import React, { useState } from "react";
+import DiaporamaData from "../../fixtures/diaporama.json";
+import SlideMount from "components/slideMount/slideMount";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  width: 200px;
+  position: relative;
+  margin: 0 auto;
+`;
 
 const SlideWrapper = styled.div`
-  width: 400px;
+  width: 500px;
   height: 200px;
   overflow: hidden;
   position: relative;
   margin-top: 59px;
-`
+`;
 
 const SliderNav = styled.div`
   width: 200px;
   display: flex;
   justify-content: space-between;
-  margin-left: 25px;
-`
+  margin-top: 25px;
+`;
 
 export function Carousel() {
-  const currentSlide = 2
+  const currentSlide = 2;
   const [slidingArray, setSlidingArray] = useState(
     DiaporamaData.map((slide, index) => ({ ...slide, index }))
-  )
+  );
   return (
-    <>
+    <Wrapper>
       <section>
         <SlideWrapper currentSlide={currentSlide}>
           {slidingArray.map((diaporama) => (
@@ -49,11 +55,11 @@ export function Carousel() {
                     ? prevSlidingArray.length - 1
                     : slide.index - 1,
               })),
-            ])
+            ]);
           }}
         />
 
-        {slidingArray[currentSlide].title}
+        {slidingArray.find((slide) => slide.index === currentSlide).title}
 
         <FaChevronRight
           onClick={() =>
@@ -69,6 +75,6 @@ export function Carousel() {
           }
         />
       </SliderNav>
-    </>
-  )
+    </Wrapper>
+  );
 }
