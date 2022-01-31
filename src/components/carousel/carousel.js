@@ -49,8 +49,8 @@ export function Carousel() {
   return (
     <>
       <Wrapper>
-        <section {...handlers}>
-          <SlideWrapper currentSlide={currentSlide}>
+        <section>
+          <SlideWrapper currentSlide={currentSlide} {...handlers}>
             {slidingArray.map((diaporama) => (
               <SlideMount
                 diaporama={diaporama}
