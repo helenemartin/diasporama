@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 
   //opacity: 1;
 
-  transform: translateX(${(props) => props.position * 200}px);
+  transform: translateX(${(props) => props.position * 230}px);
 
   transition: all 300ms ease-out;
 
