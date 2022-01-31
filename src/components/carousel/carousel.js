@@ -50,7 +50,7 @@ export function Carousel() {
     <>
       <Wrapper>
         <section>
-          <SlideWrapper currentSlide={currentSlide} {...handlers}>
+          <SlideWrapper currentSlide={{ ...handlers, currentSlide }}>
             {slidingArray.map((diaporama) => (
               <SlideMount
                 diaporama={diaporama}
