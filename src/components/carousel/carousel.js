@@ -42,8 +42,8 @@ export function Carousel() {
     DiaporamaData.map((slide, index) => ({ ...slide, index }))
   );
   const handlers = useSwipeable({
-    onSwipedLeft: () => slidingArray + 1,
-    onSwipedRight: () => slidingArray - 1,
+    onSwipedLeft: () => currentSlide(slidingArray + 1),
+    onSwipedRight: () => currentSlide(slidingArray - 1),
   });
 
   return (
