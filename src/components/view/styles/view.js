@@ -179,7 +179,7 @@ export const Close = styled.button`
   position: relative;
   &::before,
   &::after {
-    background-color: white;
+    background-color: black;
     content: "";
     height: 24px;
     width: 2px;
