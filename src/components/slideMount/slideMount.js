@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { CustomLink } from "../customLink";
 
 //rfc
 const Wrapper = styled.div`
   width: 200px;
-  height: 100px;
+  height: 500px;
   position: absolute;
   opacity: ${(props) =>
     props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
@@ -43,16 +44,21 @@ export default function SlideMount(props) {
   return (
     <>
       <Wrapper position={props.currentSlide - props.index} index={props.index}>
-        <Link to={`projects/${props.diaporama.slug}`} key={props.diaporama.id}>
-          <img
-            src={process.env.PUBLIC_URL + props.diaporama.slugImage}
-            alt={props.diaporama.diapo.alt}
-          />
-          <img
-            src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
-            alt={props.diaporama.slideAlt}
-          />
-        </Link>
+        <CustomLink>
+          <Link
+            to={`projects/${props.diaporama.slug}`}
+            key={props.diaporama.id}
+          >
+            <img
+              src={process.env.PUBLIC_URL + props.diaporama.slugImage}
+              alt={props.diaporama.diapo.alt}
+            />
+            <img
+              src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
+              alt={props.diaporama.slideAlt}
+            />
+          </Link>
+        </CustomLink>
       </Wrapper>
     </>
   );

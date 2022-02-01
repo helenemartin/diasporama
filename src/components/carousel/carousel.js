@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 
 const Wrapper = styled.div`
+  height: 200px;
   width: 200px;
   position: relative;
   margin: 0 auto;
