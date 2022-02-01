@@ -3,7 +3,7 @@
   
     list-style: none;
     letter-spacing: 0.08em;
-    font-size: 60px;
+    font-size: 50px;
     z-index: -10;
     padding-bottom: 20px;
 }
@@ -124,9 +124,12 @@
    
     color: #333;
    
-    font-size: 65px;
+    font-size: 50px;
     text-decoration: none;
-    letter-spacing:-6px;
+    letter-spacing:-0.15px;
+    font-weight: 300;
+    line-height: 1.55;
+    word-spacing: -0.50px;
     opacity: 1; 
   
   
@@ -137,11 +140,15 @@
     /* color: black;
     mix-blend-mode: color; */
     
-    font-size: 65px;
+    font-size: 50px;
     letter-spacing:-1px;
     text-decoration: none;
     font-family: "Voyage-Regular";
-    font:70px;  
+    font-weight:200;
+    letter-spacing: 2px;
+    line-height: 1.565;
+    word-spacing: 1.75px;
+    
   }
   .project-list__item-link:visited{
    

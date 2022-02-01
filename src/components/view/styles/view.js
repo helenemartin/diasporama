@@ -257,6 +257,7 @@ export const Columnwrapper = styled.div`
     width: 80vw;
   }
 `;
+
 export const Columnlayout = styled.div`
   display: flex;
 
@@ -275,6 +276,7 @@ export const Column = styled.div`
 
   @media (min-width: 900px) {
     column-count: 2;
+
     width: 100%;
     padding-bottom: 20px;
     column-gap: 10px;

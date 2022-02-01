@@ -17,25 +17,29 @@ const Wrapper = styled.div`
 
   transition: all 300ms ease-out;
 
-  img {
-    width: 100%;
-    position: absolute;
-    object-fit: contain;
-    z-index: 1;
-  }
+  // img {
+  //   width: 100%;
+  //   position: absolute;
+  //   object-fit: contain;
+  //   z-index: 1;
+  // }
 `;
 
-// const Image1 = styled.img`
-//   position: relative;
-//   width: 100%;
-// `;
+const ImageWrapper = styled.div`
+  position: relative;
+`;
+const Image1 = styled.img`
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+`;
 
-// const Image2 = styled.img`
-//   position: absolute;
-//   object-fit: cover;
-//   width: 100%;
-//   z-index: 1;
-// `;
+const Image2 = styled.img`
+  position: absolute;
+
+  width: 100%;
+  z-index: 1;
+`;
 
 export default function SlideMount(props) {
   // console.log(props.diaporama);
@@ -49,14 +53,16 @@ export default function SlideMount(props) {
             to={`projects/${props.diaporama.slug}`}
             key={props.diaporama.id}
           >
-            <img
-              src={process.env.PUBLIC_URL + props.diaporama.slugImage}
-              alt={props.diaporama.diapo.alt}
-            />
-            <img
-              src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
-              alt={props.diaporama.slideAlt}
-            />
+            <ImageWrapper>
+              <Image1
+                src={process.env.PUBLIC_URL + props.diaporama.slugImage}
+                alt={props.diaporama.diapo.alt}
+              />
+              <Image2
+                src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
+                alt={props.diaporama.slideAlt}
+              />
+            </ImageWrapper>
           </Link>
         </CustomLink>
       </Wrapper>
