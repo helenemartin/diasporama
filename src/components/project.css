@@ -10,6 +10,7 @@
 
 .hoverImage img {
   display: none;
+ 
   width: 200px;
   height:200px;
   z-index: 100;
@@ -18,6 +19,7 @@
  
 
 .hoverImage:hover img {
+ 
   display: block;
  position: absolute;
  z-index:999;
@@ -39,6 +41,8 @@
 }
 
 .project-list__item{
+
+padding-right: 30px;
   font-size: 23px;
   margin-top: 5px;
   z-index: -3;
@@ -69,7 +73,11 @@
   position:relative;
   width: 100%;
   margin-top: 27px;
+  
   z-index: 1;
+  border: 2px solid black;
+  border-radius: 50px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 .project-list__item-slide {
@@ -96,13 +104,16 @@
     top: 0;
     left: 0;
     right: 0;
-    /* width: 71vw;
-    height: auto; */
-    max-width: 1000px;
+    width: 71vw;
+    height: auto;
+    border: 2px solid black;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    border-radius: 50px;
+    max-width: 500px;
     max-height: 65vh;
     margin: auto;
     position: fixed;
-    object-fit: contain;
+    object-fit: fill;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -115,6 +126,7 @@
    
     color:blue;
     mix-blend-mode: color-burn;
+    
   
     visibility: visible;
     
@@ -126,10 +138,10 @@
    
     font-size: 50px;
     text-decoration: none;
-    letter-spacing:-0.15px;
+    letter-spacing:-0.55px;
     font-weight: 300;
-    line-height: 1.55;
-    word-spacing: -0.50px;
+    line-height: 1.55px;
+    word-spacing: -0.55px;
     opacity: 1; 
   
   
@@ -140,14 +152,15 @@
     /* color: black;
     mix-blend-mode: color; */
     
-    font-size: 50px;
+    /* font-size: 50px; */
+   
     letter-spacing:-1px;
     text-decoration: none;
     font-family: "Voyage-Regular";
     font-weight:200;
-    letter-spacing: 2px;
-    line-height: 1.565;
-    word-spacing: 1.75px;
+    letter-spacing: 1.75px;
+    line-height: 1.565px;
+    word-spacing: 1.92px;
     
   }
   .project-list__item-link:visited{
@@ -157,10 +170,19 @@
   
   }
 
-  /* .project-list__item-image{
+  .project-list__item-image{
     margin-top: 27px;
+   
     
-  } */
+  }
+  .hoverImage:hover img {
+ 
+  display: block;
+ position: absolute;
+ z-index:999;
+ 
+
+}
   
 
 }

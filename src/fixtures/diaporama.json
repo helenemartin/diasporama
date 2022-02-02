@@ -2,7 +2,7 @@
     {
       "id": 1,
       "slug": "my-project",
-      "title": "Oh, what a thrill",
+      "title": "Oh what a thrill",
       "paragraph": "orem ipsum dolor sit amet, consectetur adipiscing elit. Quisque efficitur felis ut accumsan aliquam. Etiam tortor leo, placerat ut placerat quis, tristique quis nunc. Duis quis tempor ex, sit amet sagittis erat.In hac habitasse platea dictumst. Quisque a urna quis turpis dictum ullamcorper. Aliquam erat volutpat. Quisque diam libero, vulputate non volutpat ut, sodales eu magna. Proin ultricies dolor sed erat tristique, in congue metus venenatis. Aenean blandit mauris id neque venenatis, in sollicitudin mauris vehicula. Donec venenatis risus in nisi consectetur commodo. Vestibulum id venenatis leo. Donec non libero vel nisl tempus eleifend.In interdum faucibus viverra. Nam mollis non leo id accumsan. Phasellus nec neque sed nulla pretium tempor. Sed vulputate velit convallis enim lacinia tempus. Phasellus feugiat purus vel ligula molestie, a imperdiet felis aliquet. Duis lacinia gravida tincidunt. Donec sollicitudin sapien massa, nec convallis diam efficitur quis. Cras vestibulum tortor massa, quis tincidunt justo finibus et. Donec ut commodo ligula, id luctus ligula.",
       "direction": "row-reverse",
       "color": "#71BC8F",
