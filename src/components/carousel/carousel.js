@@ -57,7 +57,7 @@ export function Carousel() {
         ...prevSlidingArray.map((slide) => ({
           ...slide,
           index:
-            slide.index < 1 ? prevSlidingArray.length - 1 : slide.index - 1,
+            slide.index > prevSlidingArray.length - 2 ? 0 : slide.index + 1,
         })),
       ]);
     },
@@ -68,9 +68,9 @@ export function Carousel() {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper {...handlers}>
         <section>
-          <SlideWrapper currentSlide={currentSlide} {...handlers}>
+          <SlideWrapper currentSlide={currentSlide}>
             {slidingArray.map((diaporama) => (
               <SlideMount
                 diaporama={diaporama}
