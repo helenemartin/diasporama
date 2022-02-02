@@ -43,38 +43,36 @@ export function Carousel() {
     DiaporamaData.map((slide, index) => ({ ...slide, index }))
   );
   const handlers = useSwipeable({
-    onSwiped: () => {
-      console.log("hello");
-      return currentSlide(slidingArray + 1);
+    onSwipedLeft: () => {
+      setSlidingArray((prevSlidingArray) => [
+        ...prevSlidingArray.map((slide) => ({
+          ...slide,
+          index:
+            slide.index < 1 ? prevSlidingArray.length - 1 : slide.index - 1,
+        })),
+      ]);
     },
-    onSwipedRight: () => currentSlide(slidingArray - 1),
+    onSwipedRight: () => {
+      setSlidingArray((prevSlidingArray) => [
+        ...prevSlidingArray.map((slide) => ({
+          ...slide,
+          index:
+            slide.index < 1 ? prevSlidingArray.length - 1 : slide.index - 1,
+        })),
+      ]);
+    },
     // trackMouse: true,
     trackTouch: true,
     preventDefaultTouchmoveEvent: false,
   });
 
-  // const handlers = useSwipeable({
-  //   onSwipedLeft: () => // do something,
-  //   onSwipedRight: () => // do something,
-  //   preventDefaultTouchmoveEvent: true,
-  //   trackMouse: true
-  // });
-  // {
-  //   delta: 10,                            // min distance(px) before a swipe starts. See Notes
-  //   preventDefaultTouchmoveEvent: false,  // call e.preventDefault See Details
-  //   trackTouch: true,                     // track touch input
-  //   trackMouse: true,                    // track mouse input
-  //   rotationAngle: 0,                     // set a rotation angle
-  // }
-
   return (
     <>
       <Wrapper>
         <section>
-          <SlideWrapper currentSlide={currentSlide}>
+          <SlideWrapper currentSlide={currentSlide} {...handlers}>
             {slidingArray.map((diaporama) => (
               <SlideMount
-                {...handlers}
                 diaporama={diaporama}
                 key={diaporama.id}
                 index={diaporama.index}
