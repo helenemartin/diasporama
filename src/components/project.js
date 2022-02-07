@@ -17,7 +17,6 @@ function Project() {
               >
                 {diaporama.title}
               </Link>
-
               <img
                 className="project-list__item-image"
                 src={process.env.PUBLIC_URL + diaporama.slugImage}

@@ -25,6 +25,7 @@ const SliderNav = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
+  margin-left: 50px;
 `;
 
 // const TextWrapper = styled.div`

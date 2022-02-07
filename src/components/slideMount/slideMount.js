@@ -10,9 +10,9 @@ const Wrapper = styled.div`
   position: absolute;
   left: 50px;
   opacity: ${(props) =>
-    props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
-  //after adding a 5th slide
-  //props.position === -2 ? 0 : props.position === 2 ? 0 : 1};
+    // props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
+    //after adding a 5th slide
+    props.position === -2 ? 0 : props.position === 2 ? 0 : 1};
 
   //opacity: 1;
 
