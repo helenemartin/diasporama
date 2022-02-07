@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 //rfc
 const Wrapper = styled.div`
-  width: 200px;
+  // width: 200px;
   height: 200px;
   position: absolute;
-  left: 50px;
+  left: 80px;
   opacity: ${(props) =>
     // props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
     //after adding a 5th slide
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 
   //opacity: 1;
 
-  transform: translateX(${(props) => props.position * 230}px);
+  transform: translateX(${(props) => props.position * 210}px);
 
   transition: all 300ms ease-out;
 
@@ -36,10 +36,10 @@ const ImageWrapper = styled.div`
 const Image1 = styled.img`
   position: relative;
   border-radius: 5px;
-  object-fit: constrain;
-  height: 180px;
-  width: 180px;
-  top: 10px;
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
+  top: 20px;
   right: 9px;
 `;
 

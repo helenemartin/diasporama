@@ -60,13 +60,18 @@ padding-right: 30px;
 } */
 
 .project-list__item-link{
- 
+ padding-top: 20px;
   position: relative;
   z-index: 2;
-
-
-
+  text-decoration: none;
+  color: black;
 }
+
+.project-list__item-link:visited {
+  
+  color: grey;
+   }
+  
 
 
 .project-list__item-image {
@@ -90,18 +95,19 @@ padding-right: 30px;
 .project-list__item{
   display: flex;
   flex-direction: column-reverse;
- margin-top: 100px;
-
 
  }
-
+.project-list_item:hover{
+  color: crimson;
+}
+ 
 
 @media (min-width: 900px) {
 
   .project-list__item{
   
   
-   margin-top: 100px;
+   margin-top: 10px;
   
   
    }

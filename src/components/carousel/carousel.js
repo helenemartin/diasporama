@@ -16,16 +16,16 @@ const Wrapper = styled.div`
 const SlideWrapper = styled.div`
   width: 100%;
   height: 200px;
-  //overflow: hidden;
+  overflow: hidden;
   position: relative;
   margin-top: 59px;
-  @media (min-width: 900px) {
-    right: 252px;
-  }
+  // @media (min-width: 900px) {
+  //   right: 252px;
+  // }
 `;
 
 const SliderNav = styled.div`
-  width: 200px;
+  // width: 200px;
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
