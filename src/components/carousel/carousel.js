@@ -7,13 +7,13 @@ import { useSwipeable } from "react-swipeable";
 
 const Wrapper = styled.div`
   height: 200px;
-  width: 200px;
+  width: 300px;
   position: relative;
   margin: 0 auto;
 `;
 
 const SlideWrapper = styled.div`
-  width: 500px;
+  width: 100%;
   height: 200px;
   overflow: hidden;
   position: relative;
@@ -63,14 +63,14 @@ export function Carousel() {
     },
     // trackMouse: true,
     trackTouch: true,
-    preventDefaultTouchmoveEvent: false,
+    preventDefaultTouchmoveEvent: true,
   });
 
   return (
     <>
-      <Wrapper>
+      <Wrapper {...handlers}>
         <section>
-          <SlideWrapper currentSlide={currentSlide} {...handlers}>
+          <SlideWrapper currentSlide={currentSlide}>
             {slidingArray.map((diaporama) => (
               <SlideMount
                 diaporama={diaporama}

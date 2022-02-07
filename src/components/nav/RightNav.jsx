@@ -9,6 +9,7 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
+  // display: none;
 
   @media (max-width: 768px) {
     align-items: flex-end;
@@ -67,6 +68,7 @@ const StyledLink  = styled(Link)`
 `;
 
 const RightNav = ({ open }) => {
+  console.log("nvState", open);
   return (
  
     <Ul open={open}>
