@@ -9,15 +9,19 @@ const Wrapper = styled.div`
   height: 200px;
   width: 300px;
   position: relative;
+  top: 25px;
   margin: 0 auto;
 `;
 
 const SlideWrapper = styled.div`
   width: 100%;
   height: 200px;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
   margin-top: 59px;
+  @media (min-width: 900px) {
+    right: 252px;
+  }
 `;
 
 const SliderNav = styled.div`
@@ -26,6 +30,9 @@ const SliderNav = styled.div`
   justify-content: space-between;
   margin-top: 25px;
   margin-left: 50px;
+
+  @media (min-width: 900px) {
+  }
 `;
 
 // const TextWrapper = styled.div`

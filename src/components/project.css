@@ -87,16 +87,24 @@ padding-right: 30px;
   left:5px;
 
 }
-  
+.project-list__item{
+  display: flex;
+  flex-direction: column-reverse;
+ margin-top: 100px;
+
+
+ }
+
 
 @media (min-width: 900px) {
 
   .project-list__item{
   
-    margin-top: 100px;
+  
+   margin-top: 100px;
   
   
-  }
+   }
 
   .project-list__item-image {
    
@@ -123,7 +131,6 @@ padding-right: 30px;
   
 
   .project-list__item-link:hover + .project-list__item-image {
-   
     mix-blend-mode: color-burn;
     visibility: visible;
     

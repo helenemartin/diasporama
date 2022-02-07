@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { CustomLink } from "../customLink";
+// import { CustomLink } from "../customLink";
 
 //rfc
 const Wrapper = styled.div`
@@ -20,31 +20,36 @@ const Wrapper = styled.div`
 
   transition: all 300ms ease-out;
 
-  img {
-    width: 100%;
-    position: absolute;
-    object-fit: contain;
-    z-index: 1;
-  }
+  // img {
+  //   width: 100%;
+  //   position: absolute;
+  //   object-fit: contain;
+  //   z-index: 1;
+  // }
 `;
 
-// const ImageWrapper = styled.div`
-//   position: relative;
-//   width: 400px;
-//   height: 200px;
-// `;
-// const Image1 = styled.img`
-//   position: relative;
-//   object-fit: cover;
-//   width: 100%;
-// `;
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+`;
+const Image1 = styled.img`
+  position: relative;
+  border-radius: 5px;
+  object-fit: constrain;
+  height: 180px;
+  width: 180px;
+  top: 10px;
+  right: 9px;
+`;
 
-// const Image2 = styled.img`
-//   position: absolute;
-
-//   width: 100%;
-//   z-index: 1;
-// `;
+const Image2 = styled.img`
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  right: 30px;
+  top: -2px;
+`;
 
 export default function SlideMount(props) {
   // console.log(props.diaporama);
@@ -53,21 +58,20 @@ export default function SlideMount(props) {
   return (
     <>
       <Wrapper position={props.currentSlide - props.index} index={props.index}>
-        <CustomLink>
-          <Link
-            to={`projects/${props.diaporama.slug}`}
-            key={props.diaporama.id}
-          >
-            <img
+        {/* <CustomLink> */}
+        <Link to={`projects/${props.diaporama.slug}`} key={props.diaporama.id}>
+          <ImageWrapper>
+            <Image1
               src={process.env.PUBLIC_URL + props.diaporama.slugImage}
               alt={props.diaporama.diapo.alt}
             />
-            <img
+            <Image2
               src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
               alt={props.diaporama.slideAlt}
             />
-          </Link>
-        </CustomLink>
+          </ImageWrapper>
+        </Link>
+        {/* </CustomLink> */}
       </Wrapper>
     </>
   );
