@@ -1,20 +1,21 @@
 .marquee {
-    padding-left: 200px;
+    /* padding-left: 200px; */
     padding-right: 0;
+    padding-top: 200px;
     position: relative;
     width: 100vw;
     max-width: 100%;
     height: 50vh;
     max-height: 50%;
     overflow-x: auto;
-    transform: rotate(-35deg);
+    /* transform: rotate(-35deg); */
    
   }
   
   .track {
   
   
-    position: absolute;
+    position: fixed;
     white-space: nowrap;
     
   }

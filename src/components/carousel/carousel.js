@@ -11,6 +11,10 @@ const Wrapper = styled.div`
   position: relative;
   top: 25px;
   margin: 0 auto;
+
+  // @media (min-width: 900px) {
+  //   width: 100%;
+  // }
 `;
 
 const SlideWrapper = styled.div`
@@ -20,19 +24,20 @@ const SlideWrapper = styled.div`
   position: relative;
   margin-top: 59px;
   // @media (min-width: 900px) {
-  //   right: 252px;
+  //   left: 252px;
   // }
 `;
 
 const SliderNav = styled.div`
-  // width: 200px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
   margin-left: 50px;
 
-  @media (min-width: 900px) {
-  }
+  // @media (min-width: 900px) {
+  //   margin-left: 20px;
+  // }
 `;
 
 // const TextWrapper = styled.div`
