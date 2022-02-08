@@ -103,6 +103,7 @@ padding-right: 30px;
  
 
 @media (min-width: 900px) {
+ 
 
   .project-list__item{
   
@@ -137,41 +138,39 @@ padding-right: 30px;
   
 
   .project-list__item-link:hover + .project-list__item-image {
+    
     mix-blend-mode: color-burn;
+   
     visibility: visible;
     
   }
 
   .project-list__item-link{
    
-    color: #333; 
     font-size: 50px;
     text-decoration: none;
     letter-spacing:-0.55px;
     font-weight: 300;
     line-height: 1.55px;
     word-spacing: -0.55px;
-    opacity: 1; 
-  
+    opacity: 1;
+    padding-top: 100px;
   
   }
 
  
   .project-list__item-link:hover{
-    /* color: black;
-    mix-blend-mode: color; */
-    
-    /* font-size: 50px; */
-   
+    color: crimson !important; 
     letter-spacing:-1px;
     text-decoration: none;
-    font-family: "Voyage-Regular";
+    font-family: "Voyage-Regular";    
     font-weight:200;
     letter-spacing: 1.75px;
     line-height: 1.565px;
     word-spacing: 1.92px;
     
   }
+
   .project-list__item-link:visited{
    
     color:black;
