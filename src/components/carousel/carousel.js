@@ -23,9 +23,9 @@ const SlideWrapper = styled.div`
   overflow: hidden;
   position: relative;
   margin-top: 59px;
-  // @media (min-width: 900px) {
-  //   left: 252px;
-  // }
+  @media (max-width: 900px) {
+    overflow: hidden;
+  }
 `;
 
 const SliderNav = styled.div`
