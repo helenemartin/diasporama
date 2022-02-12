@@ -107,7 +107,7 @@
 
   .project-list__item{
   
-  
+    align-items:flex-start;
    margin-top: 80px;
   
   
@@ -141,8 +141,8 @@
 
   .project-list__item-link:hover + .project-list__item-image {
     
-    mix-blend-mode: color-burn;
-   
+    mix-blend-mode:color-burn;
+    isolation: revert;
     visibility: visible;
     
   }

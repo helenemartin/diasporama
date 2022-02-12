@@ -5,12 +5,15 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 
+const Div = styled.div`
+  background-color: yellow;
+  position: relative;
+`;
 const Wrapper = styled.div`
   height: 200px;
-  width: 300px;
+  max-width: 600px;
   position: relative;
   top: 25px;
-  margin: 0 auto;
 
   // @media (min-width: 900px) {
   //   width: 100%;
@@ -18,22 +21,18 @@ const Wrapper = styled.div`
 `;
 
 const SlideWrapper = styled.div`
-  width: 100%;
+  max-width: 900px;
   height: 200px;
-  overflow: hidden;
   position: relative;
   margin-top: 59px;
-  @media (max-width: 900px) {
-    overflow: hidden;
-  }
+  overflow: hidden;
 `;
 
 const SliderNav = styled.div`
   width: 200px;
   display: flex;
   justify-content: space-between;
-  margin-top: 25px;
-  margin-left: 50px;
+  margin: 20px 0 0 102px;
 
   // @media (min-width: 900px) {
   //   margin-left: 20px;
@@ -81,8 +80,8 @@ export function Carousel() {
 
   return (
     <>
-      <Wrapper {...handlers}>
-        <section>
+      <Div>
+        <Wrapper {...handlers}>
           <SlideWrapper currentSlide={currentSlide}>
             {slidingArray.map((diaporama) => (
               <SlideMount
@@ -93,39 +92,40 @@ export function Carousel() {
               />
             ))}
           </SlideWrapper>
-        </section>
-        <SliderNav>
-          <FaChevronLeft
-            onClick={() => {
-              setSlidingArray((prevSlidingArray) => [
-                ...prevSlidingArray.map((slide) => ({
-                  ...slide,
-                  index:
-                    slide.index < 1
-                      ? prevSlidingArray.length - 1
-                      : slide.index - 1,
-                })),
-              ]);
-            }}
-          />
 
-          {slidingArray.find((slide) => slide.index === currentSlide).title}
+          <SliderNav>
+            <FaChevronLeft
+              onClick={() => {
+                setSlidingArray((prevSlidingArray) => [
+                  ...prevSlidingArray.map((slide) => ({
+                    ...slide,
+                    index:
+                      slide.index < 1
+                        ? prevSlidingArray.length - 1
+                        : slide.index - 1,
+                  })),
+                ]);
+              }}
+            />
 
-          <FaChevronRight
-            onClick={() =>
-              setSlidingArray((prevSlidingArray) => [
-                ...prevSlidingArray.map((slide) => ({
-                  ...slide,
-                  index:
-                    slide.index > prevSlidingArray.length - 2
-                      ? 0
-                      : slide.index + 1,
-                })),
-              ])
-            }
-          />
-        </SliderNav>
-      </Wrapper>
+            {slidingArray.find((slide) => slide.index === currentSlide).title}
+
+            <FaChevronRight
+              onClick={() =>
+                setSlidingArray((prevSlidingArray) => [
+                  ...prevSlidingArray.map((slide) => ({
+                    ...slide,
+                    index:
+                      slide.index > prevSlidingArray.length - 2
+                        ? 0
+                        : slide.index + 1,
+                  })),
+                ])
+              }
+            />
+          </SliderNav>
+        </Wrapper>
+      </Div>
       {/* <TextWrapper>
         {slidingArray.find((slide) => slide.index === currentSlide).paragraph}
       </TextWrapper> */}

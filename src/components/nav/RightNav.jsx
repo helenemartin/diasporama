@@ -12,6 +12,8 @@ const Ul = styled.ul`
   // display: none;
 
   @media (max-width: 768px) {
+    // z-index:5;
+   
     align-items: flex-end;
     justify-content: space-evenly;
     flex-flow: column nowrap;
@@ -20,6 +22,7 @@ const Ul = styled.ul`
     transform: ${({ open }) => (open ? "translateX(-0)" : "translateX(-100%)")};
     top: 45px;
     right: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
     padding: 36px;

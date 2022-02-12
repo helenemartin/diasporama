@@ -8,7 +8,8 @@ const Wrapper = styled.div`
   width: 300px;
   height: 200px;
   position: absolute;
-  left: 80px;
+  left: 135px;
+  margin: auto;
   opacity: ${(props) =>
     //   // props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
     //   //after adding a 5th slide
