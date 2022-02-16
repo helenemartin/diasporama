@@ -6,7 +6,6 @@ import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
 
 const Div = styled.div`
-  background-color: yellow;
   position: relative;
 `;
 const Wrapper = styled.div`
