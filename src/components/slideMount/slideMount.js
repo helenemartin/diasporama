@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 //rfc
 const Wrapper = styled.div`
-  width: 300px;
+  width: 200px;
   height: 200px;
   position: absolute;
   left: 135px;
@@ -49,7 +49,8 @@ const Image2 = styled.img`
   width: 100%;
   z-index: 1;
   right: 30px;
-  top: -2px;
+  border: 2px solid deeppink;
+  border-radius: 15px;
 `;
 
 export default function SlideMount(props) {

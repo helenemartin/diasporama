@@ -46,7 +46,7 @@ function wordSwap(key) {
       keySwap = "Eloquent";
       break;
     case "petCare":
-      keySwap = "Down to Earth";
+      keySwap = "Sassy";
       break;
     default:
       keySwap = key;

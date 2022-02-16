@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 
 const SlideWrapper = styled.div`
   max-width: 900px;
-  height: 200px;
+  height: 203px;
   position: relative;
   margin-top: 59px;
   overflow: hidden;
