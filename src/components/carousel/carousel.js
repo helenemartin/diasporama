@@ -21,21 +21,25 @@ const Wrapper = styled.div`
 
 const SlideWrapper = styled.div`
   max-width: 900px;
-  height: 203px;
+  height: 325px;
   position: relative;
   margin-top: 59px;
   overflow: hidden;
+  @media (min-width: 900px) {
+    height: 203px;
+  }
 `;
 
 const SliderNav = styled.div`
-  width: 200px;
+  width: 290px;
   display: flex;
   justify-content: space-between;
-  margin: 20px 0 0 102px;
+  margin: 15px 0 0 50px;
 
-  // @media (min-width: 900px) {
-  //   margin-left: 20px;
-  // }
+  @media (min-width: 900px) {
+    width: 210px;
+    margin: 20px 0 0 102px;
+  }
 `;
 
 // const TextWrapper = styled.div`

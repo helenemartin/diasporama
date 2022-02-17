@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 //rfc
 const Wrapper = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   position: absolute;
-  left: 135px;
+  left: 85px;
   margin: auto;
   opacity: ${(props) =>
     //   // props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
@@ -16,32 +16,42 @@ const Wrapper = styled.div`
     props.position === -2 ? 0 : props.position === 2 ? 0 : 1};
 
   //opacity: 1;
-
-  transform: translateX(${(props) => props.position * 210}px);
+  transform: translateX(${(props) => props.position * 300}px);
 
   transition: all 300ms ease-out;
 
-  // img {
-  //   width: 100%;
-  //   position: absolute;
-  //   object-fit: contain;
-  //   z-index: 1;
-  // }
+  @media (min-width: 900px) {
+    width: 200px;
+    height: 200px;
+    transform: translateX(${(props) => props.position * 210}px);
+    left: 140px;
+  }
 `;
 
 const ImageWrapper = styled.div`
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 284px;
+  height: 300px;
+  @media (min-width: 900px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 const Image1 = styled.img`
   position: relative;
   border-radius: 5px;
   object-fit: cover;
-  height: 150px;
-  width: 150px;
-  top: 20px;
-  right: 9px;
+  height: 200px;
+  width: 200px;
+  top: 35px;
+  left: 15px;
+
+  @media (min-width: 900px) {
+    height: 150px;
+    width: 150px;
+    top: 25px;
+    left: 0;
+  }
 `;
 
 const Image2 = styled.img`
@@ -49,6 +59,7 @@ const Image2 = styled.img`
   width: 100%;
   z-index: 1;
   right: 30px;
+  filter: drop-shadow(0 0.1rem 0.2rem crimson);
   border: 2px solid deeppink;
   border-radius: 15px;
 `;
