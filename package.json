@@ -9,8 +9,10 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
-    "babel-plugin-styled-components": "^2.0.2",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-styled-components": "1.13.3",
     "cheerio": "^1.0.0-rc.10",
+    "cosmiconfig": "^7.0.1",
     "framer-motion": "4.1.17",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,7 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-swipeable": "^6.2.0",
-    "styled-components": "^5.2.3",
+    "styled-components": "5.2.1",
     "use-sound": "2.0.1",
     "web-vitals": "^1.0.1"
   },
@@ -52,6 +54,7 @@
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
-    "netlify-cli": "^5.2.13"
+    "netlify-cli": "^5.2.13",
+    "styled-components.macro": "^1.0.0"
   }
 }

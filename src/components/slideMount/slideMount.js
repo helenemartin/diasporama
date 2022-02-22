@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { breakPoints } from "../../styling/constants";
 // import { CustomLink } from "../customLink";
 
 //rfc
 const Wrapper = styled.div`
-  width: 400px;
-  height: 400px;
+  //height: 100%;
   position: absolute;
-  left: 85px;
-  margin: auto;
+  //left: 85px;
+  //margin: auto;
   opacity: ${(props) =>
     //   // props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
     //   //after adding a 5th slide
@@ -19,8 +19,8 @@ const Wrapper = styled.div`
   transform: translateX(${(props) => props.position * 300}px);
 
   transition: all 300ms ease-out;
-
-  @media (min-width: 900px) {
+  //@media 600px
+  @media (min-width: ${breakPoints.tablet}) {
     width: 200px;
     height: 200px;
     transform: translateX(${(props) => props.position * 210}px);
@@ -32,13 +32,16 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 284px;
   height: 300px;
-  @media (min-width: 900px) {
+  @media (min-width: 769px) {
     width: 200px;
     height: 200px;
   }
+  @media (min-width: 769px) {
+  }
+  @media (min-width: 769px);
 `;
 const Image1 = styled.img`
-  position: relative;
+  position: absolute;
   border-radius: 5px;
   object-fit: cover;
   height: 200px;
@@ -46,7 +49,7 @@ const Image1 = styled.img`
   top: 35px;
   left: 15px;
 
-  @media (min-width: 900px) {
+  @media (min-width: 769px) {
     height: 150px;
     width: 150px;
     top: 25px;
@@ -55,10 +58,9 @@ const Image1 = styled.img`
 `;
 
 const Image2 = styled.img`
-  position: absolute;
+  height: 100%;
   width: 100%;
-  z-index: 1;
-  right: 30px;
+  //z-index: 1;
   filter: drop-shadow(0 0.1rem 0.2rem crimson);
   border: 2px solid deeppink;
   border-radius: 15px;
@@ -70,10 +72,14 @@ export default function SlideMount(props) {
   console.log(props.diaporama.title, props.index);
   return (
     <>
-      <Wrapper position={props.currentSlide - props.index} index={props.index}>
+      <Wrapper
+        className="iAmSlideMountWrapper"
+        position={props.currentSlide - props.index}
+        index={props.index}
+      >
         {/* <CustomLink> */}
         <Link to={`projects/${props.diaporama.slug}`} key={props.diaporama.id}>
-          <ImageWrapper>
+          <ImageWrapper className="iAmImageWrapper">
             <Image1
               src={process.env.PUBLIC_URL + props.diaporama.slugImage}
               alt={props.diaporama.diapo.alt}

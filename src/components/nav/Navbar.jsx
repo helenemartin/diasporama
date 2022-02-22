@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
-import {CustomLink} from "../customLink"
+import {CustomLink} from "../customLink";
+import {breakPoints} from "../../styling/constants";
+
 
 const Nav = styled.nav`
 align-items: center; 
@@ -23,7 +25,7 @@ background: #eae2d2;
     padding: 15px 0;
     text-decoration: none;
   }
-  @media (max-width: 768px){
+  @media (max-width: ${breakPoints.tablet}){
     background: #eae2d2;
   }
 `;

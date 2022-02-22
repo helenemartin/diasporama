@@ -4,42 +4,50 @@ import SlideMount from "components/slideMount/slideMount";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import styled from "styled-components";
 import { useSwipeable } from "react-swipeable";
+import { breakPoints } from "../../styling/constants";
 
 const Div = styled.div`
   position: relative;
 `;
 const Wrapper = styled.div`
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+
   max-width: 600px;
   position: relative;
-  top: 25px;
 
-  // @media (min-width: 900px) {
-  //   width: 100%;
-  // }
+  @media (min-width: ${breakPoints.tablet}) {
+    width: 100vw;
+  }
 `;
 
 const SlideWrapper = styled.div`
-  max-width: 900px;
-  height: 325px;
   position: relative;
+  max-width: 600px;
+  height: 317px;
   margin-top: 59px;
   overflow: hidden;
-  @media (min-width: 900px) {
+  @media (min-width: ${breakPoints.tablet}) {
     height: 203px;
   }
 `;
 
 const SliderNav = styled.div`
-  width: 290px;
-  display: flex;
-  justify-content: space-between;
-  margin: 15px 0 0 50px;
+  align-items: center;
 
-  @media (min-width: 900px) {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: ${breakPoints.tablet}) {
     width: 210px;
     margin: 20px 0 0 102px;
   }
+`;
+
+const SliderParagraph = styled.p`
+  margin: 0 24px;
+  padding: 0;
 `;
 
 // const TextWrapper = styled.div`
@@ -111,7 +119,9 @@ export function Carousel() {
               }}
             />
 
-            {slidingArray.find((slide) => slide.index === currentSlide).title}
+            <SliderParagraph>
+              {slidingArray.find((slide) => slide.index === currentSlide).title}
+            </SliderParagraph>
 
             <FaChevronRight
               onClick={() =>
