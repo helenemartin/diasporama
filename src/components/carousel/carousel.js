@@ -22,26 +22,29 @@ const Wrapper = styled.div`
 `;
 
 const SlideWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   position: relative;
   max-width: 600px;
   height: 317px;
   margin-top: 59px;
   overflow: hidden;
+
   @media (min-width: ${breakPoints.tablet}) {
     height: 203px;
   }
 `;
 
 const SliderNav = styled.div`
-  align-items: center;
-
+  align-items: space-between;
   width: 100%;
   display: flex;
   justify-content: center;
 
   @media (min-width: ${breakPoints.tablet}) {
+    align-items: center;
     width: 210px;
-    margin: 20px 0 0 102px;
+    margin: 20px 0 0 132px;
   }
 `;
 
