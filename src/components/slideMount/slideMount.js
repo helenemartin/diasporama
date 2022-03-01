@@ -32,7 +32,7 @@ const ImageWrapper = styled.div`
   position: relative;
   width: 284px;
   height: 300px;
-  @media (min-width: 769px) {
+  @media (min-width: ${breakPoints.tablet}) {
     width: 200px;
     height: 200px;
   }
@@ -46,14 +46,16 @@ const Image1 = styled.img`
   object-fit: cover;
   height: 200px;
   width: 200px;
-  top: 35px;
-  left: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  @media (min-width: 769px) {
+  @media (min-width: ${breakPoints.tablet}) {
     height: 150px;
     width: 150px;
-    top: 25px;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `;
 
@@ -95,3 +97,16 @@ export default function SlideMount(props) {
     </>
   );
 }
+// @keyframes glow {
+//   0% {
+//     box-shadow: rgb(252, 210, 23) 0 0 0px;
+//   }
+//   100% {
+//     box-shadow: rgb(252, 210, 23) 0 10px 100px;
+//   }
+// }
+// const Image2 = styled.div.attrs(({props.currentSlide}) => ({
+//   style: {
+//     animation: $currentSlide ? 'glow 3s infinite alternate' : 'none',
+//   },
+// }))`

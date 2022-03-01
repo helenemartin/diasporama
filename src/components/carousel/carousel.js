@@ -13,11 +13,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  max-width: 600px;
   position: relative;
 
   @media (min-width: ${breakPoints.tablet}) {
-    width: 100vw;
+    max-width: 600px;
   }
 `;
 
@@ -25,13 +24,13 @@ const SlideWrapper = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  max-width: 600px;
   height: 317px;
   margin-top: 59px;
   overflow: hidden;
 
   @media (min-width: ${breakPoints.tablet}) {
-    height: 203px;
+    height: 227px;
+    max-width: 600px;
   }
 `;
 
@@ -43,12 +42,13 @@ const SliderNav = styled.div`
 
   @media (min-width: ${breakPoints.tablet}) {
     align-items: center;
-    width: 210px;
-    margin: 20px 0 0 132px;
+    width: 250px;
+    margin: 20px 0 0 112px;
   }
 `;
 
 const SliderParagraph = styled.p`
+  white-space: nowrap;
   margin: 0 24px;
   padding: 0;
 `;
