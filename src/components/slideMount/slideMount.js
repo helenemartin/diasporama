@@ -1,10 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+
+import styled, { keyframes } from "styled-components";
 import { breakPoints } from "../../styling/constants";
+
 // import { CustomLink } from "../customLink";
 
 //rfc
+const glow = keyframes`
+0% {
+box-shadow: rgb(252, 210, 23) 0 0 0px;
+}
+100% {
+box-shadow: rgb(252, 210, 23) 0 10px 100px;
+}
+`;
+
 const Wrapper = styled.div`
   //height: 100%;
   position: absolute;
@@ -60,10 +71,12 @@ const Image1 = styled.img`
 `;
 
 const Image2 = styled.img`
+  position: relative;
   height: 100%;
   width: 100%;
   //z-index: 1;
-  filter: drop-shadow(0 0.1rem 0.2rem crimson);
+  // filter: drop-shadow(0 0.1rem 0.2rem crimson);
+  animation: ${(props) => (props.current ? glow : "none")} 3s infinite alternate;
   border: 2px solid deeppink;
   border-radius: 15px;
 `;
@@ -87,6 +100,7 @@ export default function SlideMount(props) {
               alt={props.diaporama.diapo.alt}
             />
             <Image2
+              current={props.currentSlide === props.index}
               src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
               alt={props.diaporama.slideAlt}
             />

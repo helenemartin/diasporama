@@ -49,8 +49,13 @@ const SliderNav = styled.div`
 
 const SliderParagraph = styled.p`
   white-space: nowrap;
+  min-width: 170px;
+  text-align: center;
   margin: 0 24px;
   padding: 0;
+  @media (min-width: ${breakPoints.tablet}) {
+    min-width: 170px;
+  }
 `;
 
 // const TextWrapper = styled.div`
