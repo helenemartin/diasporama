@@ -22,7 +22,10 @@ export default function ContactForm() {
         axios
           .post("/", formData)
           .then((res) => setLoading(false))
-          .catch((error) => setError(true));
+          .catch((error) => {
+            setLoading(false);
+            setError(true);
+          });
       }}
       name="contact"
       method="post"
@@ -65,11 +68,14 @@ export default function ContactForm() {
           }}
         ></textarea>
       </p>
-      {loading ? <Loader /> : "hello"}
+      {loading ? (
+        "loading..."
+      ) : (
+        <p>
+          <input type="submit" value="Submit message" />
+        </p>
+      )}
       {error ? "An error has occured" : null}
-      <p>
-        <input type="submit" value="Submit message" />
-      </p>
     </form>
   );
 }
