@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Loader from "../../components/loader";
 import axios from "axios";
 
 export default function ContactForm() {
