@@ -55,11 +55,12 @@ const Image1 = styled.img`
   position: absolute;
   border-radius: 5px;
   object-fit: cover;
-  height: 200px;
-  width: 200px;
+  height: 230px;
+  width: 230px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: ${(props) => (props.current ? 0.5 : "none")};
 
   @media (min-width: ${breakPoints.tablet}) {
     height: 150px;
@@ -76,6 +77,7 @@ const Image2 = styled.img`
   width: 100%;
   //z-index: 1;
   // filter: drop-shadow(0 0.1rem 0.2rem crimson);
+
   animation: ${(props) => (props.current ? glow : "none")} 3s infinite alternate;
   border: 2px solid deeppink;
   border-radius: 15px;
@@ -96,6 +98,7 @@ export default function SlideMount(props) {
         <Link to={`projects/${props.diaporama.slug}`} key={props.diaporama.id}>
           <ImageWrapper className="iAmImageWrapper">
             <Image1
+              current={props.currentSlide === props.index}
               src={process.env.PUBLIC_URL + props.diaporama.slugImage}
               alt={props.diaporama.diapo.alt}
             />
