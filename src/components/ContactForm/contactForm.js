@@ -8,6 +8,13 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const eraseForm = () => {
+    // console.log("ERASEDDD");
+    Array.from(document.querySelector("input")).forEach(
+      (index) => (index.value = "")
+    );
+  };
+
   return (
     <form
       onSubmit={(e) => {
@@ -68,10 +75,12 @@ export default function ContactForm() {
         ></textarea>
       </p>
       {loading ? (
-        "loading..."
+        "Sending..."
       ) : (
         <p>
-          <input type="submit" value="Submit message" />
+          <button type="submit" onClick={eraseForm}>
+            Submit Message
+          </button>
         </p>
       )}
       {error ? "An error has occured" : null}
