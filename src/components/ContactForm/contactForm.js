@@ -16,7 +16,7 @@ const FormHeader = styled.div`
   margin-bottom: 20px;
 `;
 const FormTitle = styled.h4`
-  margin-left: 66px;
+  margin-left: 50px;
   font-size: 3em;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: #272727;
@@ -55,11 +55,8 @@ const Submit = styled.button`
   background: none;
   border: 2px solid crimson;
   color: crimson;
-
   font-size: 18px;
   font-weight: 700;
-
-  text-transform: uppercase;
 `;
 
 export default function ContactForm() {
@@ -84,7 +81,11 @@ export default function ContactForm() {
   //     (index) => (index.value = "")
   //   );
   // };
-
+  const clearForm = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
   return (
     <FormContainer>
       <FormHeader>
@@ -95,11 +96,11 @@ export default function ContactForm() {
           <Text>
             <p>
               If you are either a raconteuse or a raccoon
-              organisation/non-profit/individual who need embedazzelment, a
+              organisation/non-profit/individual who need no embezzlement, a
               business looking to create a safer habitat for endangered species
-              or a like-minded organisation/non-profit/individual that is
-              working to support racoonteuses, get in touch and let’s find out
-              how we can work together.
+              or a like-minded organisation/non-profit/pet that is working to
+              support racoonteuses, get in touch and let’s find out how we can
+              work together.
             </p>
           </Text>
         </Pane>
@@ -116,7 +117,10 @@ export default function ContactForm() {
                 formData.append("message", message);
                 axios
                   .post("/", formData)
-                  .then((res) => setLoading(false))
+                  .then((res) => {
+                    setLoading(false);
+                    clearForm();
+                  })
                   .catch((error) => {
                     setLoading(false);
                     setError(true);
