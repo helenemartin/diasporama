@@ -39,7 +39,7 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [clearForm, setClearForm] = useState("");
+
   // const [timerOnSubmit, setTimerOnSubmit] = useState(false);
 
   // useEffect(() => {
