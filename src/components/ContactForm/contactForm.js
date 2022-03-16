@@ -83,7 +83,8 @@ export default function ContactForm() {
                   setError(true);
                 });
             }}
-            name="contact"
+            firstName="contact"
+            LastName="contact"
             method="post"
           >
             <Name>
