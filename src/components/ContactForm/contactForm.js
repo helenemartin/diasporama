@@ -33,8 +33,7 @@ const Name = styled.div`
 `;
 
 export default function ContactForm() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -71,8 +70,7 @@ export default function ContactForm() {
               setLoading(true);
               const formData = new URLSearchParams();
               formData.append("form-name", "contact");
-              formData.append("firstname", firstName);
-              formData.append("lastname", lastName);
+              formData.append("name", name);
               formData.append("email", email);
               formData.append("message", message);
               axios
@@ -83,31 +81,19 @@ export default function ContactForm() {
                   setError(true);
                 });
             }}
-            firstName="contact"
-            LastName="contact"
+            name="contact"
             method="post"
           >
             <Name>
-              <label htmlFor="firstname">First Name</label> <br />
-              <input
-                type="text"
-                id="firstname"
-                firstname="firstname"
-                required
-                value={firstName}
-                onChange={(e) => {
-                  setFirstName(e.target.value);
-                }}
-              />
-              <label htmlFor="lastname">Last Name</label> <br />
+              <label htmlFor="name">Name</label> <br />
               <input
                 type="text"
                 id="name"
-                lastname="lastname"
+                name="name"
                 required
-                value={lastName}
+                value={name}
                 onChange={(e) => {
-                  setLastName(e.target.value);
+                  setName(e.target.value);
                 }}
               />
             </Name>
