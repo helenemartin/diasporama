@@ -10,20 +10,20 @@ const FormHeader = styled.div`
   justify-content: flex-start;
   display: flex;
   align-items: flex-end;
-  /* margin: 0 auto; */
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 `;
 const FormTitle = styled.h4`
-  margin-left: 86px;
+  margin-left: 66px;
   font-size: 3em;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: #272727;
   -webkit-text-stroke-width: 1px;
 `;
 const ContactInner = styled.div`
+  font-size: 1.3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33,12 +33,14 @@ const ContactInner = styled.div`
   }
 `;
 const Pane = styled.div`
-  margin: 0 100px;
+  margin: 0 80px;
 `;
 const Text = styled.div`
   width: 100%;
   max-width: 400px;
   padding-right: 40px;
+
+  text-align: start;
 `;
 const Form = styled.div`
   padding-top: 20px;
@@ -47,6 +49,17 @@ const Form = styled.div`
 `;
 const Name = styled.div`
   display: inline-flex;
+`;
+
+const Submit = styled.button`
+  background: none;
+  border: 2px solid crimson;
+  color: crimson;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  text-transform: uppercase;
 `;
 
 export default function ContactForm() {
@@ -83,10 +96,10 @@ export default function ContactForm() {
             <p>
               If you are either a raconteuse or a raccoon
               organisation/non-profit/individual who need embedazzelment, a
-              business looking to create a safer workplace for endangered
-              species or a like-minded organisation/non-profit/individual that
-              is working to support racoonteuses, get in touch and let’s find
-              out how we can work together.
+              business looking to create a safer habitat for endangered species
+              or a like-minded organisation/non-profit/individual that is
+              working to support racoonteuses, get in touch and let’s find out
+              how we can work together.
             </p>
           </Text>
         </Pane>
@@ -113,7 +126,7 @@ export default function ContactForm() {
               method="post"
             >
               <Name>
-                <label htmlFor="name">Name</label> <br />
+                <label htmlFor="name">First Name</label> <br />
                 <input
                   type="text"
                   id="name"
@@ -124,7 +137,7 @@ export default function ContactForm() {
                     setName(e.target.value);
                   }}
                 />
-                <label htmlFor="name">Surname</label> <br />
+                <label htmlFor="name">Last Name</label> <br />
                 <input
                   type="text"
                   id="name"
@@ -165,9 +178,7 @@ export default function ContactForm() {
               {loading ? (
                 <p>Sending ...</p>
               ) : (
-                <p>
-                  <button type="submit">Submit Message</button>
-                </p>
+                <Submit type="submit">Submit Message </Submit>
               )}
               {error ? <p>An error has occured</p> : null}
             </form>
