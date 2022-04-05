@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { breakPoints } from "../../styling/constants";
+import TextField from "../TextField";
+import TextArea from "../TextArea";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -34,6 +36,9 @@ const ContactInner = styled.div`
 `;
 const Pane = styled.div`
   margin: 0 80px;
+  @media (min-width: ${breakPoints.tablet}) {
+    margin: 0 30px;
+  }
 `;
 const Text = styled.div`
   width: 100%;
@@ -46,9 +51,6 @@ const Form = styled.div`
   padding-top: 20px;
   width: 100%;
   max-width: 600px;
-`;
-const Name = styled.div`
-  display: inline-flex;
 `;
 
 const Submit = styled.button`
@@ -86,6 +88,26 @@ export default function ContactForm() {
     setEmail("");
     setMessage("");
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const formData = new URLSearchParams();
+    formData.append("form-name", "contact");
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("message", message);
+    axios
+      .post("/", formData)
+      .then((res) => {
+        setLoading(false);
+        clearForm();
+      })
+      .catch((error) => {
+        setLoading(false);
+        setError(true);
+      });
+  };
   return (
     <FormContainer>
       <FormHeader>
@@ -106,79 +128,41 @@ export default function ContactForm() {
         </Pane>
         <Pane>
           <Form>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setLoading(true);
-                const formData = new URLSearchParams();
-                formData.append("form-name", "contact");
-                formData.append("name", name);
-                formData.append("email", email);
-                formData.append("message", message);
-                axios
-                  .post("/", formData)
-                  .then((res) => {
-                    setLoading(false);
-                    clearForm();
-                  })
-                  .catch((error) => {
-                    setLoading(false);
-                    setError(true);
-                  });
-              }}
-              name="contact"
-              method="post"
-            >
-              <Name>
-                <label htmlFor="name">First Name</label> <br />
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                />
-                <label htmlFor="name">Last Name</label> <br />
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={name}
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                />
-              </Name>
+            <form onSubmit={handleSubmit} name="contact" method="post">
+              <TextField
+                required
+                id="name"
+                placeholder="First name"
+                name="name"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+              />
 
-              <p>
-                <label htmlFor="email">Email</label> <br />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-              </p>
-              <p>
-                <label htmlFor="message">Message</label> <br />
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  value={message}
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
-                ></textarea>
-              </p>
+              <TextField
+                required
+                id="email"
+                placeholder="Email"
+                name="email"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+
+              <TextArea
+                required
+                id="message"
+                label="Message"
+                name="message"
+                value={message}
+                placeholder="Say Hello!"
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+              />
+
               {loading ? (
                 <p>Sending ...</p>
               ) : (
