@@ -132,7 +132,7 @@ export default function ContactForm() {
               <TextField
                 required
                 id="name"
-                placeholder="First name"
+                placeholder="Name"
                 name="name"
                 value={name}
                 onChange={(e) => {

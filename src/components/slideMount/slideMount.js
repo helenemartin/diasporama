@@ -99,12 +99,13 @@ export default function SlideMount(props) {
           <ImageWrapper className="iAmImageWrapper">
             <Image1
               current={props.currentSlide === props.index}
-              src={process.env.PUBLIC_URL + props.diaporama.slugImage}
+              src={props.diaporama.slugImage}
+              /* src={process.env.PUBLIC_URL + props.diaporama.slugImage} */
               alt={props.diaporama.diapo.alt}
             />
             <Image2
               current={props.currentSlide === props.index}
-              src={process.env.PUBLIC_URL + props.diaporama.slugSlide}
+              src={props.diaporama.slugSlide}
               alt={props.diaporama.slideAlt}
             />
           </ImageWrapper>
