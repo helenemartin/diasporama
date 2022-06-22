@@ -19,6 +19,7 @@ const Input = styled.input`
   &::placeholder {
     color: #333;
   }
+
 `;
 
 export default function TextField({

@@ -76,7 +76,9 @@ export function Carousel() {
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       setSlidingArray((prevSlidingArray) => [
+      //
         ...prevSlidingArray.map((slide) => ({
+      //
           ...slide,
           index:
             slide.index < 1 ? prevSlidingArray.length - 1 : slide.index - 1,

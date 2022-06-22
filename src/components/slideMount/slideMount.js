@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import  DiaporamaData  from "../../fixtures/diaporama.json";
 
 import styled, { keyframes } from "styled-components";
 import { breakPoints } from "../../styling/constants";
 
+
+
 // import { CustomLink } from "../customLink";
 
 //rfc
+
 const glow = keyframes`
 0% {
 box-shadow: rgb(252, 210, 23) 0 0 0px;
@@ -22,11 +26,12 @@ const Wrapper = styled.div`
   //left: 85px;
   //margin: auto;
   opacity: ${(props) =>
-    //   // props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
+    //props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
     //   //after adding a 5th slide
-    props.position === -2 ? 0 : props.position === 2 ? 0 : 1};
-
-  //opacity: 1;
+  props.position === -3 ? 0 : props.position === 2 ? 0 : 1};
+  //props.position === ((Images + 1) % Images.length()) ? 0 : props.position === 2 ? 0 : 1};
+  //props.position === (ImagesLength - 3) ? 0 : props.position === 2 ? 0 : 1};
+  
   transform: translateX(${(props) => props.position * 300}px);
 
   transition: all 300ms ease-out;
