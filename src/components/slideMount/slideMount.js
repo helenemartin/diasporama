@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import  DiaporamaData  from "../../fixtures/diaporama.json";
+
 
 import styled, { keyframes } from "styled-components";
 import { breakPoints } from "../../styling/constants";
