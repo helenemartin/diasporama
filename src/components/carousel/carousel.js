@@ -110,6 +110,7 @@ export function Carousel() {
                 key={diaporama.id}
                 index={diaporama.index}
                 currentSlide={currentSlide}
+                //mountedImagesLength={slidingArray.length}
               />
             ))}
           </SlideWrapper>

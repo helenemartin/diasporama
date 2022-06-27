@@ -12,17 +12,21 @@ const FormHeader = styled.div`
   justify-content: flex-start;
   display: flex;
   align-items: flex-end;
-  margin: 0 auto;
+  //margin: 0 auto;
   max-width: 1200px;
   width: 100%;
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
 `;
 const FormTitle = styled.h4`
-  margin-left: 50px;
+  padding-left: 38px;
   font-size: 3em;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: #272727;
   -webkit-text-stroke-width: 1px;
+
+  @media (min-width: ${breakPoints.tablet}) {
+      padding-left: 35px;
+    }
 `;
 const ContactInner = styled.div`
   font-size: 1.3rem;
@@ -35,7 +39,7 @@ const ContactInner = styled.div`
   }
 `;
 const Pane = styled.div`
-  margin: 0 80px;
+  margin: 0 40px;
   @media (min-width: ${breakPoints.tablet}) {
     margin: 0 30px;
   }

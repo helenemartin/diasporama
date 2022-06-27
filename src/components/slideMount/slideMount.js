@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-
 import styled, { keyframes } from "styled-components";
 import { breakPoints } from "../../styling/constants";
 
@@ -20,16 +18,32 @@ box-shadow: rgb(252, 210, 23) 0 10px 100px;
 }
 `;
 
+const darkened = keyframes`
+0% {
+  opacity: rgb(252, 210, 23) 0 0 0px;
+  }
+  100% {
+  opacity: rgb(252, 210, 23) 0 10px 100px;
+  }
+
+`;
+
+
 const Wrapper = styled.div`
   //height: 100%;
   position: absolute;
   //left: 85px;
   //margin: auto;
-  opacity: ${(props) =>
+  opacity: ${(props) =>  
+  
     //props.position === -1 ? 0 : props.position === 2 ? 0 : 1};
     //   //after adding a 5th slide
-  props.position === -3 ? 0 : props.position === 2 ? 0 : 1};
-  //props.position === ((Images + 1) % Images.length()) ? 0 : props.position === 2 ? 0 : 1};
+    // === -2 ? 0
+    // after 6th slide
+  //props.position === -3 ? 0 : props.position === 2 ? 0 : 1};
+  props.position < 2 && props.position > -2 ? 1 : 0};
+  
+ // props.position === 
   //props.position === (ImagesLength - 3) ? 0 : props.position === 2 ? 0 : 1};
   
   transform: translateX(${(props) => props.position * 300}px);
@@ -65,7 +79,7 @@ const Image1 = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: ${(props) => (props.current ? 0.5 : "none")};
+  opacity: ${(props) => (props.current ? "none": darkened)} 5s infinite alternate;
 
   @media (min-width: ${breakPoints.tablet}) {
     height: 150px;
@@ -89,9 +103,10 @@ const Image2 = styled.img`
 `;
 
 export default function SlideMount(props) {
-  // console.log(props.diaporama);
-  // console.log(props.currentSlide);
-  console.log(props.diaporama.title, props.index);
+  console.log(props);
+  //console.log(props.index < 1 && props.index > -1 )
+
+  //console.log(props.diaporama.title, props.index);
   return (
     <>
       <Wrapper

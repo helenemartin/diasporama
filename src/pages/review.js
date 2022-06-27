@@ -57,7 +57,7 @@ export function Review() {
         <>
           <Navbar />
           <div className="review-header">
-            <h1>Reviews</h1>
+            <h4>Reviews</h4>
           </div>
           <div className="review-card-layout-wrapper">
             <div className="review-card-layout ">
