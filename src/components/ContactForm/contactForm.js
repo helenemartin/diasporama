@@ -98,7 +98,7 @@ export default function ContactForm() {
     console.log(email);
     if(!email) {
       setEmailError("email is required")
-    }else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+    }else if(!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)){
       setEmailError("Incorrect email");
     } else {
       setEmailError("")
