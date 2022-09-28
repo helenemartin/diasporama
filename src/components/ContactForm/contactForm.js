@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { breakPoints } from "../../styling/constants";
 import TextField from "../TextField";
+import ErrorMessage from "../ErrorMessage"
 import TextArea from "../TextArea";
 import styled from "styled-components";
 import axios from "axios";
@@ -69,6 +70,7 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const[emailError, setEmailError] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -92,9 +94,36 @@ export default function ContactForm() {
     setEmail("");
     setMessage("");
   };
+  const validateEmail = useCallback(() => {
+    console.log(email);
+    if(!email) {
+      setEmailError("email is required")
+    }else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+      setEmailError("Incorrect email");
+    } else {
+      setEmailError("")
+      return true;
+    }
+    return false;
+  }, [email]);
+
+  
+  const handleEmailChange = useCallback((e) => {
+    
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+    console.log(newEmail);
+    
+  }, []);
+  const handleEmailBlur = useCallback((e) => {
+    validateEmail();
+  }, [validateEmail]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!validateEmail()){
+      return;
+    }
     setLoading(true);
     const formData = new URLSearchParams();
     formData.append("form-name", "contact");
@@ -145,15 +174,16 @@ export default function ContactForm() {
               />
 
               <TextField
-                required
                 id="email"
                 placeholder="Email"
                 name="email"
                 value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
+                onChange={handleEmailChange}
+                onBlur={handleEmailBlur}
               />
+
+              
+              <ErrorMessage>{emailError}</ErrorMessage>
 
               <TextArea
                 required
