@@ -26,7 +26,7 @@ url("//db.onlinewebfonts.com/t/d18acb2db67fb3aae1ccd198d37a10e9.woff") format("w
         font-family: "Avenir", sans-serif;
         text-rendering: optimizeLegibility;
         -moz-osx-font-smoothing: grayscale;
-        background: white;
+        background: #f1efe9;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         color: #333333;

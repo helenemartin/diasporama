@@ -27,9 +27,10 @@ const SlideWrapper = styled.div`
   height: 317px;
   margin-top: 59px;
   overflow: hidden;
+  align-items: center;
 
   @media (min-width: ${breakPoints.tablet}) {
-    height: 227px;
+    height: 600px;
     max-width: 600px;
   }
 `;

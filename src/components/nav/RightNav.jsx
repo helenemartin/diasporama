@@ -17,7 +17,7 @@ const Ul = styled.ul`
     align-items: flex-end;
     justify-content: space-evenly;
     flex-flow: column nowrap;
-    background-color: #eae2d2;
+    background-color: #f1efe9;
     position: fixed;
     transform: ${({ open }) => (open ? "translateX(-0)" : "translateX(-100%)")};
     top: 45px;

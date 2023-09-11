@@ -8,7 +8,7 @@ import {breakPoints} from "../../styling/constants";
 
 const Nav = styled.nav`
 align-items: center; 
-background: #eae2d2;
+background: #f1efe9;
   width: 100%;
   // height: ${({ shrinkNav }) => (shrinkNav ? "90px" : "150px")};
   border-bottom: 1px solid black;
@@ -26,7 +26,7 @@ background: #eae2d2;
     text-decoration: none;
   }
   @media (max-width: ${breakPoints.tablet}){
-    background: #eae2d2;
+    background: #f1efe9;
   }
 `;
 
@@ -34,7 +34,7 @@ const StyledLink  = styled(Link)`
      text-decoration: none;
      color:black;
      font-family: "Voyage-Regular";
-     font-size:2em;
+     font-size:2.5em;
      display: flex;
     align-items: center;
 `;
