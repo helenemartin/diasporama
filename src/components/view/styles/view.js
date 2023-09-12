@@ -99,11 +99,12 @@ export const Textwrapper = styled.section`
   display: flex;
   // flex-direction: row;
   flex-wrap: wrap;
-  padding: 5px 20px;
+  padding: 5px 60px;
 `;
 export const H1 = styled.h1`
+  padding-bottom: 15px;
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 5rem;
   font-family: "Voyage-Regular", sans-serif;
 `;
 
