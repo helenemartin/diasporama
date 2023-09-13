@@ -286,21 +286,73 @@
     "slugAlt": "chapeau",
 
     "diapo": [
+      
+     
       {
-        "text": "Image1",
-        "image": "/images/patch-sleve.JPG",
+        "text": "Image 1",
+        "image": "/images/helen-and-setup.jpg",
         "alt": "bla"
       },
       {
-        "text": "Image2",
+        "text": "Image 2",
+        "image": "/images/warm-pict.jpg",
+        "alt": "bla"
+      },
+      {
+        "text": "Image 3",
+        "image": "/images/amy.jpg",
+        "alt": "bla"
+      },
+      {
+        "text": "Image 4",
+        "image": "/images/amy-threads.jpg",
+        "alt": "bla"
+      },
+      {
+        "text": "Image 5",
+        "image": "/images/helen-box.jpg",
+        "alt": "bla"
+      },
+      {
+        "text": "Image 6",
+        "image": "/images/helen-trousers.jpg",
+        "alt": "bla"
+      },
+      
+      {
+        "text": "Image 7",
+        "image": "/images/technical-room.jpg",
+        "alt": "bla"
+      },
+      
+      {
+        "text": "Image 8",
+        "image": "/images/sleeve-needles.jpg",
+        "alt": "bla"
+      },
+      {
+        "text": "Image 9",
+        "image": "/images/shortened-sleeve-shirt.jpg",
+        "alt": "bla"
+      },
+      {
+        "text": "Image 10",
+        "image": "/images/cardigan-on-table.jpg",
+        "alt": "bla"
+      },
+      {
+        "text": "Image 11",
         "image": "/images/helene-detail.jpg",
         "alt": "bla"
       },
+
       {
-        "text": "Image3",
-        "image": "/images/cardigan-on-table.jpg",
+        "text": "Image 12",
+        "image": "/images/patch-sleve.JPG",
         "alt": "bla"
       }
+     
+      
     ]
   }
 ]
