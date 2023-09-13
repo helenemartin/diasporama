@@ -79,7 +79,7 @@ export const Image = styled.img`
   }
 `;
 export const Figcaption = styled.figcaption`
-  color: white;
+  color: #eae2d2;
   font-size: 20px;
   z-index: 1;
 `;

@@ -44,7 +44,9 @@ const SliderNav = styled.div`
   @media (min-width: ${breakPoints.tablet}) {
     align-items: center;
     width: 250px;
-    margin: 20px 0 0 112px;
+    margin: 0 20px 10px -91px;
+    padding-top: 293px;
+    padding-right: 6px;
   }
 `;
 
@@ -114,41 +116,42 @@ export function Carousel() {
                 //mountedImagesLength={slidingArray.length}
               />
             ))}
+                <SliderNav>
+                  <FaChevronLeft
+                    onClick={() => {
+                      setSlidingArray((prevSlidingArray) => [
+                        ...prevSlidingArray.map((slide) => ({
+                          ...slide,
+                          index:
+                            slide.index < 1
+                              ? prevSlidingArray.length - 1
+                              : slide.index - 1,
+                        })),
+                      ]);
+                    }}
+                  />
+
+                  <SliderParagraph>
+                    {slidingArray.find((slide) => slide.index === currentSlide).title}
+                  </SliderParagraph>
+
+                  <FaChevronRight
+                    onClick={() =>
+                      setSlidingArray((prevSlidingArray) => [
+                        ...prevSlidingArray.map((slide) => ({
+                          ...slide,
+                          index:
+                            slide.index > prevSlidingArray.length - 2
+                              ? 0
+                              : slide.index + 1,
+                        })),
+                      ])
+                    }
+                  />
+                </SliderNav>
           </SlideWrapper>
 
-          <SliderNav>
-            <FaChevronLeft
-              onClick={() => {
-                setSlidingArray((prevSlidingArray) => [
-                  ...prevSlidingArray.map((slide) => ({
-                    ...slide,
-                    index:
-                      slide.index < 1
-                        ? prevSlidingArray.length - 1
-                        : slide.index - 1,
-                  })),
-                ]);
-              }}
-            />
 
-            <SliderParagraph>
-              {slidingArray.find((slide) => slide.index === currentSlide).title}
-            </SliderParagraph>
-
-            <FaChevronRight
-              onClick={() =>
-                setSlidingArray((prevSlidingArray) => [
-                  ...prevSlidingArray.map((slide) => ({
-                    ...slide,
-                    index:
-                      slide.index > prevSlidingArray.length - 2
-                        ? 0
-                        : slide.index + 1,
-                  })),
-                ])
-              }
-            />
-          </SliderNav>
         </Wrapper>
       </Div>
       {/* <TextWrapper>
