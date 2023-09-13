@@ -271,7 +271,8 @@ export const Columnlayout = styled.div`
 export const Column = styled.div`
   column-count: 1;
   // align-items: flex-start;
-  font-size: 1em;
+  font-size: 1.2em;
+  line-heigt: 1.2rem;
 
   color: black;
 
@@ -280,7 +281,7 @@ export const Column = styled.div`
 
     width: 100%;
     padding-bottom: 20px;
-    column-gap: 10px;
+    column-gap: 18px;
     align-items: flex-end;
   }
 `;
