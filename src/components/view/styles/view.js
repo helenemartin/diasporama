@@ -102,7 +102,6 @@ export const Textwrapper = styled.section`
   padding: 5px 60px;
 `;
 export const H1 = styled.h1`
-  padding-bottom: 15px;
   font-weight: 900;
   font-size: 5rem;
   font-family: "Voyage-Regular", sans-serif;
@@ -110,6 +109,8 @@ export const H1 = styled.h1`
 
 export const P = styled.p`
   font-size: 1em;
+  line-height: 4em;
+  font-family: "Baskerville"
 `;
 
 export const H2 = styled.h2`
@@ -271,17 +272,17 @@ export const Columnlayout = styled.div`
 export const Column = styled.div`
   column-count: 1;
   // align-items: flex-start;
-  font-size: 1.2em;
-  line-heigt: 1.2rem;
+  font-size: 1rem;
+ 
 
   color: black;
 
   @media (min-width: 900px) {
     column-count: 2;
-
     width: 100%;
     padding-bottom: 20px;
-    column-gap: 18px;
+    column-gap: 28px;
+    line-height: 1.6;
     align-items: flex-end;
   }
 `;
