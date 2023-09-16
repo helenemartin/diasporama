@@ -117,6 +117,7 @@ export const H2 = styled.h2`
   font-weight: 900;
   font-size: 10vh;
   color: #eae2d2;
+  text-underline-offset: 38px;
   text-decoration: underline overline;
   font-family: "Voyage-Regular", sans-serif;
 `;
