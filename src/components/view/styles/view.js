@@ -272,9 +272,8 @@ export const Columnlayout = styled.div`
 export const Column = styled.div`
   column-count: 1;
   // align-items: flex-start;
+  line-height: 1.6;
   font-size: 1rem;
- 
-
   color: black;
 
   @media (min-width: 900px) {
