@@ -80,7 +80,7 @@ export const Image = styled.img`
 `;
 export const Figcaption = styled.figcaption`
   color: #eae2d2;
-  font-size: 20px;
+  font-size: 11px;
   z-index: 1;
 `;
 
@@ -102,7 +102,7 @@ export const Textwrapper = styled.section`
   padding: 5px 60px;
 `;
 export const H1 = styled.h1`
-  font-weight: 900;
+  font-weight: 200;
   font-size: 5rem;
   font-family: "Voyage-Regular", sans-serif;
 `;
@@ -110,15 +110,15 @@ export const H1 = styled.h1`
 export const P = styled.p`
   font-size: 1em;
   line-height: 4em;
-  font-family: "Baskerville"
+  font-family: "Avenir"
 `;
 
 export const H2 = styled.h2`
-  font-weight: 900;
-  font-size: 10vh;
+  font-weight: 100;
+  font-size: 3rem;
   color: #eae2d2;
-  text-underline-offset: 38px;
-  text-decoration: underline overline;
+  text-underline-offset: 23px;
+  text-decoration: underline overline 1px;
   font-family: "Voyage-Regular", sans-serif;
 `;
 
